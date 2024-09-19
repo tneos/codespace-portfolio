@@ -26,49 +26,6 @@ const printOnly = () => console.log("printing");
 // Q6
 const sum = (num1, num2) => num1 + num2;
 
-// Challenge 1
-// Reverse a string
-const reverseString = function (string) {
-  const strArray = string.split("");
-
-  const reverseArr = [];
-
-  while (strArray.length > 0) {
-    reverseArr.push(strArray.pop());
-  }
-
-  console.log(reverseArr.toString().replaceAll(",", ""));
-};
-
-//reverseString("John");
-
-// Challenge 2
-// Reverse an array
-const reverseArray = function (arr) {
-  const reverseArr = [];
-  while (arr.length > 0) {
-    reverseArr.push(arr.pop());
-  }
-
-  console.log(reverseArr);
-};
-
-// Challenge 3
-// Find most expensive item
-const mostExpensiveItem = function (array) {
-  let totalPrice = 0;
-
-  // Find and save higher cost
-  array.forEach(item => {
-    totalPrice < item.stock * item.price ? (totalPrice = item.stock * item.price) : totalPrice;
-  });
-
-  // Find item in array with the higher cost
-  let mostExpensive = array.find(item => item.stock * item.price === totalPrice);
-
-  console.log(mostExpensive);
-};
-
 // In this task your are required to create a user application.
 
 // Let's write a user class with the tools we have just acquired. This class will contain the first and  last name of each user and will be able to say hello to anyone who uses our application.
