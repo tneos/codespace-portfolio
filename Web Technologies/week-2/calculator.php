@@ -43,16 +43,7 @@
 </form>
 
 <?php
-// PHP Function
 
-function replaceVowelsWithX($string) {
-    $vowels = array("a", "e", "i", "o", "u", "A", "E", "I", "O", "U");
-    $modifiedString = str_replace($vowels, "x", $string);
-    return $modifiedString;
-}
-
-$modifiedString = replaceVowelsWithX("Hello Thomas");
-echo "<h1 class='display-6 px-4'>" . $modifiedString . "</h1>";
 
 // Get the values submitted via the form, using $_GET
 if (isset($_GET['num1']) && isset($_GET['num2']) && isset($_GET['button']))
