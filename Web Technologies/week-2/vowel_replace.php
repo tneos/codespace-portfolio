@@ -7,6 +7,6 @@ function replaceVowelsWithX($string) {
     return $modifiedString;
 }
 
-$modifiedString = replaceVowelsWithX("Hello Thomas");
+$modifiedString = replaceVowelsWithX("Replace vowels if you can..");
 echo "<h1 class='display-6 px-4'>" . $modifiedString . "</h1>";
 ?>

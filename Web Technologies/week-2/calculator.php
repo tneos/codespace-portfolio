@@ -52,7 +52,7 @@ if (isset($_GET['num1']) && isset($_GET['num2']) && isset($_GET['button']))
    $num2 = $_GET['num2'];
    $button = $_GET['button'];
 
-//    echo $button;
+
 
    // Display results
    switch ($button) {
