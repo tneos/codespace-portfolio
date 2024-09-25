@@ -1,9 +1,10 @@
 // getters and setters methods
 
 class User {
-  constructor(firstName, lastName) {
-    this._firstName = firstName;
-    this._lastName = lastName;
+  // Initialize empty values
+  constructor() {
+    this._firstName = "";
+    this._lastName = "";
   }
 
   get firstName() {
@@ -26,7 +27,14 @@ class User {
   }
 }
 
-const user = new User("Thomas", "Neos");
+const user = new User();
+
+// Use setters to set firstName and lastName
+user._firstName = "Thomas";
+user._lastName = "Neos";
+
+// Use getters to get firstName and lastName
+let fullName = user._firstName + " " + user._lastName;
 
 console.log(user.hello());
-console.log(`My name is ${user.firstName} ${user.lastName}`);
+console.log(`My name is ${fullName}`);

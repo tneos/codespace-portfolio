@@ -2,6 +2,7 @@
 
 class User {
   constructor() {
+    // Initialize private property
     this._numberOfArticles = 0;
   }
 
@@ -13,19 +14,19 @@ class User {
     return this._numberOfArticles;
   }
   calcScores() {
-    console.log("Number of articles will be implemented separately for each class");
+    throw new Error("Method calcScores() must be implemented separately in sub class");
   }
 }
 
 class Author extends User {
   calcScores() {
-    return this.numberOfArticles * 10 * 20;
+    return this.numberOfArticles * 10 + 20;
   }
 }
 
 class Editor extends User {
   calcScores() {
-    return this.numberOfArticles * 6 * 15;
+    return this.numberOfArticles * 6 + 15;
   }
 }
 

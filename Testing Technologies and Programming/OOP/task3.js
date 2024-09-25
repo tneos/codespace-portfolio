@@ -5,7 +5,11 @@ class User {
     this._username = username;
   }
 
-  set changeUsername(username) {
+  get username() {
+    return this._username;
+  }
+
+  set username(username) {
     this._username = username;
   }
 }
@@ -16,9 +20,11 @@ class Admin extends User {
   }
 
   sayHello() {
-    console.log(`Hello admin, ${this._username}`);
+    console.log(`Hello admin, ${this.username}`);
   }
 }
 
-const admin = new Admin("Balthazar");
+const admin = new Admin();
+// Set property
+admin.username = "Balthasar";
 admin.sayHello();
