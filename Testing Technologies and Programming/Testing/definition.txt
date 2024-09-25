@@ -1,0 +1,16 @@
+1) What is Software Testing?
+Software Testing is a method to assess the functionality of the software program. The process checks whether the actual software matches the expected requirements
+and ensures the software is bug-free. The purpose of software testing is to identify the errors, faults, or missing requirements in contrast to actual requirements.
+2) What are the dangers of release untested Software?
+Modern software is built from highly interconnected components that must work together seamlessly to deliver the intended functionality. One broken component can create a ripple effect and break the entire app. 
+The sooner the broken code is fixed, the smaller the impact. A good testing process in place ensures that a higher quality and more reliable product is always delivered on time.
+3) Types Of Software Testing
+ a) Functional Testing
+ b) Non-functional Testing
+ c) Maintenance Testing
+4) What is Functional Testing?
+It is a type of software testing that validates the software systems against the functional requirements. It is performed to check whether the application is working as per the software’s functional requirements or not.
+Types of functional testing are Unit testing, Integration testing, System testing and so on.
+5) What is Non-Functional Testing?
+ It is a type of software testing that checks the application for non-functional requirements like performance, scalability, portability, stress, etc.
+ Types of non-functional testing are Performance testing, Stress testing, Usability Testing, and so on.
