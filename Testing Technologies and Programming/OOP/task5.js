@@ -1,12 +1,17 @@
-// Abstraction example
+// Abstract class example
 
 class User {
-  constructor(username) {
-    this._username = username;
+  constructor() {
+    // Check if an attempt is made to create an object(instanciate) of abstract class
+    if (this.constructor == User) {
+      throw new Error("Cannot instanciate abstract class..");
+    }
+    this._username = "";
   }
 
+  // Abstract method
   stateYourRole() {
-    console.log("Function that will be called from child class");
+    throw new Error("Function can only be called from child class");
   }
 
   get username() {
@@ -29,8 +34,11 @@ class Viewer extends User {
   }
 }
 
-const admin = new Admin("Balthazar");
-const viewer = new Viewer("Melchior");
+const admin = new Admin();
+const viewer = new Viewer();
+// Set usernames
+admin.username = "Balthazar";
+viewer.username = "Melchior";
 
 admin.stateYourRole();
 viewer.stateYourRole();
