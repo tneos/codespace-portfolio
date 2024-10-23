@@ -1,7 +1,8 @@
-<nav class="navbar navbar-expand-lg">
+<div class="row navbar-row mx-5 mx-lg-1">
+        <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="#">
-                            <img class="img-fluid logo" src="images/logo.png" alt="logo">
+                        <a class="navbar-brand" href="../views/index.php">
+                            <img class="img-fluid logo" src="../images/logo.png" alt="logo">
                         </a>
                         <button
                             class="navbar-burger navbar-toggler p-2 rounded-1 border-0 bg-light"
@@ -62,15 +63,16 @@
                                     type="button"
                                     aria-expanded="false"
                                     aria-controls="userText"
-                                    src="images/person.svg"
+                                    src="../images/person.svg"
                                     alt="person"
                                 >
-                                <img src="images/basket.svg" alt="basket">
+                                <img src="../images/basket.svg" alt="basket">
                                 <div class="collapse position-absolute top-100 start-0 user" id="userText">
-                                    <a class="btn btn-sm josefin-slab-thin user-info" href="#">Sign In</a>
-                                    <a class="btn btn-sm josefin-slab-thin user-info" href="#">Create an account</a>
+                                    <a class="btn btn-sm josefin-slab-thin user-info" href="login.php">Sign In</a>
+                                    <a class="btn btn-sm josefin-slab-thin user-info" href="register.php">Create an account</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </nav>
+        </nav>
+</div>
