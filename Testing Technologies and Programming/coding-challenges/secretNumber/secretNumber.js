@@ -6,6 +6,7 @@ const secretNumber = () => {
 
   // Input from user
   let choice = parseInt(document.getElementById("number").value);
+
   // DOM element for response to user
   const answer = document.getElementById("answer");
 
