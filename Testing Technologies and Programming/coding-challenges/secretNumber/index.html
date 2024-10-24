@@ -13,18 +13,27 @@
       crossorigin="anonymous"
     />
   </head>
+  <style>
+    .container {
+      margin-top: 10%;
+      margin-left: 25%;
+      width: 100%;
+    }
+  </style>
   <body>
   
     <div class="container">
-       <form class="d-flex px-2 gap-2" id="form">
+      
+       <form class="d-flex px-2 py-5 w-25 justify-content-around gap-2" id="form">
           <label for="number">Enter your choice</label>
           <input id="number" type="number" min="1" max="10" />
        </form>
          <!--Buttons-->
-       <div class="d-flex gap-2">
+       <div class="d-flex w-25 justify-content-around gap-2">
           <button class="btn btn-light" type="submit" onclick="secretNumber()">Submit</button>
           <button class="btn btn-success" onclick="onClear()">Play Again</button>
        </div>
+      
         
         <div class="d-flex gap-2">
           <h1 id="answer"></h1>
