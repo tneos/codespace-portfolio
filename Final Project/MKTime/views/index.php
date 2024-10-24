@@ -15,10 +15,11 @@
 
     while ( $row = mysqli_fetch_array( $r, MYSQLI_ASSOC ))
 {
-echo '
+echo 
+'
    
                  <div class="col-lg-4 col-md-6 col-sm-12">
-                    <div class="card my-5" style="height: 80vh;">
+                    <div class="card my-5" style="height: 80vh;" id=' . $row['item_id'] .'>
                         <img
                             class="card-img-top"
                             src='. $row['item_img'].'
@@ -27,9 +28,9 @@ echo '
                         <div class="card-body">
                             <h5 class="card-title montserrat-300">' . $row['item_name'] .'</h5>
                             <p class="card-text h-25 montserrat-300">'. $row['item_desc'] . '</p>
-                            <div class="card-details d-flex">
+                            <div class="card-details d-flex justify-content-between">
                             <p class="card-text h-25 montserrat-300">£'. $row['item_price'] . '</p>
-                            <a href="#" class="btn btn-light card-button card-button montserrat-300">See more</a>
+                            <a href="singleProduct.php?item_id='.$row['item_id'].'" class="btn btn-light card-button card-button montserrat-300">See more</a>
                             </div>
                         </div>
                     </div>
