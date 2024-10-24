@@ -43,64 +43,7 @@ document.getElementById.  -->
        <h2>Result: <span data-cy="result" id="result"></span> </h2>
     </div>
     </div>
-    <script>
-        // Get the buttons
-        const rockBtn = document.getElementById("rock");
-        const paperBtn = document.getElementById("paper");
-        const scissorsBtn = document.getElementById("scissors");
-
-
-        // Get the spans
-        const userSpan = document.getElementById("user-option");
-        const computerSpan = document.getElementById("computer-option");
-        const resSpan = document.getElementById("result");
-
-        // Define the options
-        const options = ["Rock", "Paper", "Scissors"];
-
-        // Add click events to the buttons
-        rockBtn.addEventListener("click", (e) => {
-           playGame(options[0])
-
-        })
-        paperBtn.addEventListener("click", (e) => {
-           playGame(options[1])
-           
-        })
-        scissorsBtn.addEventListener("click", (e) => {
-           playGame(options[2])
-           
-        })
-
-        // Play the game function
-        const playGame = (userOption) => {
-            const computerOption = options[Math.floor(Math.random() * options.length)];
-           userSpan.innerHTML = userOption;
-           // Set computer option
-           computerSpan.innerHTML = computerOption;
-
-          // Compare results
-          if(userOption === computerOption){
-            resSpan.innerHTML = "It's a tie!"
-           } else if(userOption === "Rock" && computerOption === "Scissors") {
-            resSpan.innerHTML = "You win!"
-           }
-           else if(userOption === "Paper" && computerOption === "Rock") {
-            resSpan.innerHTML = "You win!"
-           }
-           else if(userOption === "Scissors" && computerOption === "Paper") {
-            resSpan.innerHTML = "You win!"
-           }
-           else {
-            resSpan.innerHTML = "You loose!"
-           
-           }
-        }
-
-        
-        
-    </script>
-    
+    <script src="../coding-challenges/rps_game.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
