@@ -40,39 +40,44 @@ if (isset($_GET['item_id'])) {
 
 {
 echo '
-<div class="row">
-   <div class="col-6">
-                    <div class="card my-5" style="height: 80vh;" id=' . $individual_item['id'] .'>
-                        <img
-                            class="card-img-top"
-                            src='. $individual_item['img'].'
-                            alt="analog-2"
-                        >
-                        <div class="card-body">
-                            <h5 class="card-title montserrat-300">' . $individual_item['name'] .'</h5>
-                            <p class="card-text h-25 montserrat-300">'. $individual_item['desc'] . '</p>
-                            <div class="card-details d-flex justify-content-between">
-                            <p class="card-text h-25 montserrat-300">£'. $individual_item['price'] . '</p>
-                            
-                            <a href="#" class="btn btn-light card-button card-button montserrat-300">See more</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-             
+   <section class="py-5">
+        <div class="container px-4 px-lg-5 my-5">
+          <div class="row gx-4 gx-lg-5 align-items-center">
+            <div class="col-md-6" id='.$individual_item['id'].'>
+              <img
+                class="card-img-top mb-5 mb-md-0"
+                src='.$individual_item['img'].'
+                alt="..."
+              />
+            </div>
+            <div class="col-md-6">
+              <h1 class="display-5 fw-bolder">'.$individual_item['name'].'</h1>
+              <div class="fs-5 mb-5">
+                <span class="text-decoration-line-through">'.$individual_item['price'].'</span>
+                <span>$40.00</span>
+              </div>
+              <p class="lead">
+                '.$individual_item['desc'].'
+              </p>
+              <div class="d-flex">
+                <input
+                  class="form-control text-center me-3"
+                  id="inputQuantity"
+                  type="num"
+                  value="1"
+                  style="max-width: 3rem"
+                />
+                <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                  <i class="bi-cart-fill me-1"></i>
+                  Add to cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
   ';
-  }
- 
-
-  echo '
-    <div class="col-6">
-      <div class="card-details d-flex justify-content-between">
-                            <a href="added.php?id='.$individual_item['id'].'" class="btn btn-success btn-block">Add to Cart</a>
-                            <a href="added.php?id='.$individual_item['id'].'" class="btn btn-danger btn-block">Remove from Cart</a>
-      </div>
-    </div>
-</div>
-  ';
+}
 	
 	include ('footer.php');
 
@@ -84,3 +89,4 @@ echo '
 
 
 
+?>
