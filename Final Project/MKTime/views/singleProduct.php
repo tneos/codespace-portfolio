@@ -51,12 +51,12 @@ echo '
               />
             </div>
             <div class="col-md-6">
-              <h1 class="display-5 fw-bolder">'.$individual_item['name'].'</h1>
+              <h1 class="display-5 montserrat-300">'.$individual_item['name'].'</h1>
               <div class="fs-5 mb-5">
-                <span class="text-decoration-line-through">'.$individual_item['price'].'</span>
-                <span>$40.00</span>
+                <span class="h-25 montserrat-300">£'.$individual_item['price'].'</span>
+                
               </div>
-              <p class="lead">
+              <p class="lead card-text h-25 montserrat-300">
                 '.$individual_item['desc'].'
               </p>
               <div class="d-flex">

@@ -1,3 +1,4 @@
+<?php
 # Function to load specified or default URL.
 function load( $page = 'login.php' )
 {
@@ -45,3 +46,4 @@ function validate( $link, $email = '', $pwd = '')
   # On failure retrieve error message/s.
   return array( false, $errors ) ; 
 }
+?>

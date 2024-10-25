@@ -72,3 +72,17 @@
 .card-button {
   font-size: 0.9rem;
 }
+
+.register-container,
+.login-container {
+  position: relative;
+  margin-top: 5rem;
+}
+
+/* Back home button */
+.back-home {
+  position: absolute;
+  top: -10%;
+  left: 0;
+  width: 10rem;
+}
