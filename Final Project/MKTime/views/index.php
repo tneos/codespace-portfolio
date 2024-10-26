@@ -4,6 +4,8 @@
   include('navbar.php');
   # Open database connection.
 	require ( '../../MKTime/connect_db.php' );
+
+  
 	
 	# Retrieve items from 'products' database table.
 	$q = "SELECT * FROM products" ;
@@ -46,7 +48,7 @@ echo
 	
 	include ('footer.php');
 
-// Close the Connection: After you're done fetching data, it's good practice to close the database connection to free up resources.
+
 
 
 

@@ -1,9 +1,10 @@
+<?php
 if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
 
-require ( 'connect_db.php' ) ;
+require ( '../connect_db.php' ) ;
 
 require ( 'login_tools.php' ) ;
-list ( $check, $data ) = validate ( $link, $_POST[ 'email' ], $_POST[ 'pass' ] ) ;
+
 
   // Check login
   list ( $check, $data ) = validate ( $link, $_POST[ 'email' ], $_POST[ 'pass' ] ) ;
@@ -21,7 +22,7 @@ list ( $check, $data ) = validate ( $link, $_POST[ 'email' ], $_POST[ 'pass' ] )
     if ($_SESSION[ 'role_id' ] == 1) { // Role_id equal 1 is a admin role
       load ( 'adminproducts/admin.php' ) ;
     } else {
-      load ( 'home.php' ) ;
+      load ( '../views/index.php' ) ;
     }
 
   } else { 
@@ -30,7 +31,7 @@ list ( $check, $data ) = validate ( $link, $_POST[ 'email' ], $_POST[ 'pass' ] )
 
   // Close database connection
   mysqli_close( $link );
-}
+
 
 // Continue to display login page on failure
 include ( 'login.php' ) ;

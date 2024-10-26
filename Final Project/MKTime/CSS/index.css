@@ -57,6 +57,10 @@
   font-size: 1rem;
   align-self: flex-start;
 }
+.welcome-message {
+  font-size: 0.8rem;
+  padding-top: 0.5rem;
+}
 
 /* Cards */
 .card-img-top {

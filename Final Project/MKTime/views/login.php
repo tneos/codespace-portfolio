@@ -3,7 +3,7 @@ include_once 'head.php';
 
 
 // Start the session at the beginning
-//start_session_function();
+session_start();
 
 // Display any error messages if present
 if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
@@ -19,7 +19,7 @@ if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
 <section class="vh-75 pt-2">
       <div class="container h-75">
         <div class="row d-flex justify-content-center align-items-center login-container">
-          <a class="btn btn-light back-home" href="../views/index.php">Back Home</a>
+          <a class="btn btn-light back-home" href="index.php">Back Home</a>
           <div class="col-lg-12 col-xl-11">
             <div class="card text-black" style="border-radius: 25px">
               <div class="card-body p-md-5">
@@ -27,11 +27,11 @@ if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
                   <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                     <p class="text-center montserrat-300 h1 mb-5 mx-1 mx-md-4 mt-4">Login</p>
 
-                    <form class="mx-1 mx-md-4" action="login_action.php" method="post">
+                    <form class="mx-1 mx-md-4" action="../actions/login_action.php" method="post">
                       <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                         <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                          <label class="form-label" for="email">Email</label>
+                          <label class="form-label" for="inputemail">Email</label>
                           <input
                             type="text"
                             name="email"
@@ -45,10 +45,10 @@ if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
                       <div class="d-flex flex-row align-items-center mb-4">
                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                         <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                          <label class="form-label" for="password">Password</label>
+                          <label class="form-label" for="inputpass">Password</label>
                           <input
-                            type="text"
-                            name="password"
+                            type="password"
+                            name="pass"
                             class="form-control"
                             placeholder="* Enter password"
                           />
@@ -57,7 +57,7 @@ if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
 
                       <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                         <button
-                          type="button"
+                          type="submit"
                           data-mdb-button-init
                           data-mdb-ripple-init
                           class="btn btn-light card-button montserrat-300"

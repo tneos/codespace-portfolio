@@ -59,7 +59,7 @@ $errors[] =
     if ($r)
     { echo '
      <p>You are now registered.</p>
-	  <a class="alert-link" href="login.php">Login</a>'; }
+	  <a class="btn btn-light card-button montserrat-300" href="login.php">Login</a>'; }
 	  
 # Close database connection.
     mysqli_close($link); 
