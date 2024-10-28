@@ -59,7 +59,7 @@ $errors[] =
     if ($r)
     { echo '
      <p>You are now registered.</p>
-	  <a class="btn btn-light card-button montserrat-300" href="login.php">Login</a>'; }
+	  <a class="btn btn-light card-button montserrat-300" href="login.php" data-test="register-success">Login</a>'; }
 	  
 # Close database connection.
     mysqli_close($link); 
@@ -69,7 +69,7 @@ $errors[] =
   # Or report errors.
   else 
   {
-    echo '<h4 class="alert-heading" id="err_msg">The following error(s) occurred:</h4>' ;
+    echo '<h4 class="alert-heading" id="err_msg" data-test="register-error">The following error(s) occurred:</h4>' ;
     foreach ( $errors as $msg )
     { echo " - $msg<br>" ; }
     echo '<p>or please try again.</p></div>';
@@ -82,7 +82,7 @@ $errors[] =
  <section class="vh-75 pt-2">
       <div class="container h-75">
         <div class="row d-flex justify-content-center align-items-center register-container">
-          <a class="btn btn-light back-home" href="../views/index.php">Back Home</a>
+          <a class="btn btn-light back-home" href="../views/index.php" data-test="back-home-button">Back Home</a>
           <div class="col-lg-12 col-xl-11">
             <div class="card text-black" style="border-radius: 25px">
               <div class="card-body p-md-5">
@@ -102,6 +102,7 @@ $errors[] =
                             class="form-control"
                             required
                             value="<?php if (isset($_POST['first_name'])) echo $_POST['first_name']; ?>"
+                            data-test="register-first-name"
                           />
                           
                         </div>
@@ -118,6 +119,7 @@ $errors[] =
                             class="form-control"
                             required
                             value="<?php if (isset($_POST['last_name'])) echo $_POST['last_name']; ?>"
+                            data-test="register-last-name"
                           />
                           
                         </div>
@@ -134,6 +136,7 @@ $errors[] =
                             class="form-control"
                             value="<?php if (isset($_POST['email'])) 
 	           echo $_POST['email']; ?>"
+                            data-test="register-email"
                           />
                           
                         </div>
@@ -149,6 +152,7 @@ $errors[] =
                             id="pass1"
                             class="form-control"
                             value="<?php if (isset($_POST['pass1'])) echo $_POST['pass1']; ?>"
+                            data-test="register-pass1"
                           />
                           
                         </div>
@@ -164,6 +168,7 @@ $errors[] =
                             id="pass2"
                             class="form-control"
                             value="<?php if (isset($_POST['pass2'])) echo $_POST['pass2']; ?>"
+                            data-test="register-pass2"
                           />
                           
                         </div>
@@ -175,6 +180,7 @@ $errors[] =
                           data-mdb-button-init
                           data-mdb-ripple-init
                           class="btn btn-light card-button montserrat-300"
+                          data-test="register-submit"
                         >
                           Register
                         </button>

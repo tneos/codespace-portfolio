@@ -78,7 +78,8 @@
 }
 
 .register-container,
-.login-container {
+.login-container,
+.cart-container {
   position: relative;
   margin-top: 5rem;
 }

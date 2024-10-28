@@ -67,10 +67,10 @@ echo '
                   value="1"
                   style="max-width: 3rem"
                 />
-                <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                <a class="btn btn-outline-dark flex-shrink-0" type="button" href="addToCart.php?id='.$individual_item['id'].'">
                   <i class="bi-cart-fill me-1"></i>
                   Add to cart
-                </button>
+                </a>
               </div>
             </div>
           </div>

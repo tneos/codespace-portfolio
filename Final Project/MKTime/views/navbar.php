@@ -83,7 +83,7 @@ if (isset($_SESSION['first_name'])) {
                                 >
                                 <img src="../images/basket.svg" alt="basket">
                                 <div class="collapse position-absolute top-100 start-0 user" id="userText">
-                                    <a class="btn btn-sm josefin-slab-thin user-info" type="submit" href = "logout.php?redirect=<?php echo base64_encode(curPageURL()); ?>">Logout</a>
+                                    <a class="btn btn-sm josefin-slab-thin user-info" type="submit" data-test="logout-link" href = "logout.php?redirect=<?php echo base64_encode(curPageURL()); ?>">Logout</a>
                                     
                                 </div>
                             </div>
@@ -100,11 +100,12 @@ if (isset($_SESSION['first_name'])) {
                                     aria-controls="userText"
                                     src="../images/person.svg"
                                     alt="person"
+                                    data-test="user-icon"
                                 >
                                 <img src="../images/basket.svg" alt="basket">
                                 <div class="collapse position-absolute top-100 start-0 user" id="userText">
-                                    <a class="btn btn-sm josefin-slab-thin user-info" href="login.php">Sign In</a>
-                                    <a class="btn btn-sm josefin-slab-thin user-info" href="register.php">Create an account</a>
+                                    <a class="btn btn-sm josefin-slab-thin user-info" href="login.php" data-test="login-link">Sign In</a>
+                                    <a class="btn btn-sm josefin-slab-thin user-info" href="register.php" data-test="create-account-link">Create an account</a>
                                 </div>
                             </div>
     ';

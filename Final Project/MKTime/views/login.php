@@ -33,6 +33,7 @@ if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
                         <div data-mdb-input-init class="form-outline flex-fill mb-0">
                           <label class="form-label" for="inputemail">Email</label>
                           <input
+                          data-test="email-input"
                             type="text"
                             name="email"
                             class="form-control"
@@ -47,6 +48,7 @@ if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
                         <div data-mdb-input-init class="form-outline flex-fill mb-0">
                           <label class="form-label" for="inputpass">Password</label>
                           <input
+                            data-test="password-input"
                             type="password"
                             name="pass"
                             class="form-control"
@@ -61,6 +63,7 @@ if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
                           data-mdb-button-init
                           data-mdb-ripple-init
                           class="btn btn-light card-button montserrat-300"
+                          data-test="login-submit"
                         >
                           Login
                         </button>
