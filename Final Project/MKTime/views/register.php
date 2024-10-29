@@ -46,8 +46,9 @@ if ( $_SERVER[ 'REQUEST_METHOD' ] == 'POST' )
     $r = @mysqli_query ( $link, $q ) ;
     if ( mysqli_num_rows( $r ) != 0 ) 
 $errors[] = 
-'Email address already registered. 
-<a class="alert-link" href="login.php">Sign In Now</a>' ;
+' <p class="alert-link" data-test="register-error-msg">Email address already registered 
+<a class="alert-link" href="login.php" data-test="register-error-msg">Sign In Now</a>
+</p>' ;
   }
 
   # On success register user inserting into 'users' database table.
@@ -58,8 +59,11 @@ $errors[] =
     $r = @mysqli_query ( $link, $q ) ;
     if ($r)
     { echo '
-     <p>You are now registered.</p>
-	  <a class="btn btn-light card-button montserrat-300" href="login.php" data-test="register-success">Login</a>'; }
+      <div class="container" data-test="register-success-container">
+     <p data-test="register-success-msg">You are now registered.</p>
+	  <a class="btn btn-light card-button montserrat-300" href="login.php" data-test="register-success-btn">Login</a>
+    </div>
+    '; }
 	  
 # Close database connection.
     mysqli_close($link); 
@@ -69,10 +73,15 @@ $errors[] =
   # Or report errors.
   else 
   {
-    echo '<h4 class="alert-heading" id="err_msg" data-test="register-error">The following error(s) occurred:</h4>' ;
+    echo "
+    <div class='container' data-test='register-error-container'>
+    <h4 class='alert-heading' id='err_msg' data-test='register-error'>The following error(s) occurred:</h4>";
     foreach ( $errors as $msg )
-    { echo " - $msg<br>" ; }
-    echo '<p>or please try again.</p></div>';
+    { echo "<p class='alert-link' data-test='register-error-msg'>".$msg."<br></p>"; }
+    echo "<p>or please try again.</p></div>
+    </p>
+    </div>
+    ";
     # Close database connection.
     mysqli_close( $link );
   }  

@@ -2,6 +2,7 @@
   <?php 
   include('head.php');
   include('navbar.php');
+  
   # Open database connection.
 	require ( '../../MKTime/connect_db.php' );
 

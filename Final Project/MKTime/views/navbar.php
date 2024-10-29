@@ -80,6 +80,7 @@ if (isset($_SESSION['first_name'])) {
                                     aria-controls="userText"
                                     src="../images/person.svg"
                                     alt="person"
+                                    id="user-icon"
                                 >
                                 <img src="../images/basket.svg" alt="basket">
                                 <div class="collapse position-absolute top-100 start-0 user" id="userText">
@@ -100,6 +101,7 @@ if (isset($_SESSION['first_name'])) {
                                     aria-controls="userText"
                                     src="../images/person.svg"
                                     alt="person"
+                                    id="user-icon"
                                     data-test="user-icon"
                                 >
                                 <img src="../images/basket.svg" alt="basket">
