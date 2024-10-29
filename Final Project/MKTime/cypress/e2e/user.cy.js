@@ -65,19 +65,19 @@ describe("template spec", () => {
   it("create an account and sign in", () => {
     cy.get("#user-icon").click();
     cy.get('[data-test="create-account-link"]').click();
-    cy.get('[data-test="register-first-name"]').type("Oscar");
+    cy.get('[data-test="register-first-name"]').type("David");
     cy.get('[data-test="register-last-name"]').type("Smith");
-    cy.get('[data-test="register-email"]').type("oscar@example.com");
-    cy.get('[data-test="register-pass1"]').type("oscar123");
-    cy.get('[data-test="register-pass2"]').type("oscar123");
+    cy.get('[data-test="register-email"]').type("david@example.com");
+    cy.get('[data-test="register-pass1"]').type("david123");
+    cy.get('[data-test="register-pass2"]').type("david123");
     cy.get('[data-test="register-submit"]').click();
     cy.get('[data-test="register-success-container"]').should("exist");
     cy.get('[data-test="register-success-msg"]')
       .contains("You are now registered.")
       .should("exist");
     cy.get('[data-test="register-success-btn"]').click();
-    cy.get('[data-test="email-input"]').type("oscar@example.com");
-    cy.get('[data-test="password-input"]').type("oscar123");
+    cy.get('[data-test="email-input"]').type("david@example.com");
+    cy.get('[data-test="password-input"]').type("david123");
     cy.get('[data-test="login-submit"]').click();
   });
 
