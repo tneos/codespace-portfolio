@@ -57,13 +57,13 @@ if (isset($_SESSION['first_name'])) {
                         <div class="navbar-collapse collapse" id="navbarText" style="height: 193px;">
                             <ul class="navbar-nav mx-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link josefin-slab-thin" aria-current="page" href="#">Our Watches</a>
+                                    <a class="nav-link josefin-slab-thin" aria-current="page" href="index.php" data-test="our watches">Our Watches</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link josefin-slab-thin" aria-current="page" href="#">Smart Watches</a>
+                                    <a class="nav-link josefin-slab-thin" aria-current="page" href="#" data-test="Smart Watches">Smart Watches</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link josefin-slab-thin" aria-current="page" href="#">Analog</a>
+                                    <a class="nav-link josefin-slab-thin" aria-current="page" href="#" data-test="Analog">Analog</a>
                                 </li>
                             </ul>
   ';
@@ -82,7 +82,9 @@ if (isset($_SESSION['first_name'])) {
                                     alt="person"
                                     id="user-icon"
                                 >
+                                
                                 <img src="../images/basket.svg" alt="basket">
+                                
                                 <div class="collapse position-absolute top-100 start-0 user" id="userText">
                                     <a class="btn btn-sm josefin-slab-thin user-info" type="submit" data-test="logout-link" href = "logout.php?redirect=<?php echo base64_encode(curPageURL()); ?>">Logout</a>
                                     

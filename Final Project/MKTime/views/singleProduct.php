@@ -5,15 +5,6 @@ include 'navbar.php';
  # Open database connection.
 	require ( '../../MKTime/connect_db.php' );
 
-// if (!isset($_GET['product_id'])) {
-//     echo "<p class='text-danger'>Product not found.</p>";
-//     include 'footer.php';
-//     exit();
-// }
-
-// $productId = $_GET['product_id'];
-// $query = 'SELECT * FROM products WHERE item_id = "'.$_GET['product_id'].'"';
-// echo $query;
 
 if (isset($_GET['item_id'])) {
         $id = $_GET['item_id'];
@@ -67,7 +58,7 @@ echo '
                   value="1"
                   style="max-width: 3rem"
                 />
-                <a class="btn btn-outline-dark flex-shrink-0" type="button" href="addToCart.php?id='.$individual_item['id'].'">
+                <a class="btn btn-outline-dark flex-shrink-0"p href="addToCart.php?id='.$individual_item['id'].'">
                   <i class="bi-cart-fill me-1"></i>
                   Add to cart
                 </a>
@@ -81,7 +72,7 @@ echo '
 	
 	include ('footer.php');
 
-// Close the Connection: After you're done fetching data, it's good practice to close the database connection to free up resources.
+
 
 
 

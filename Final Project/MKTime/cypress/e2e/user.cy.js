@@ -1,7 +1,4 @@
-let registerUrl = "http://localhost/mktime/MKTime/views/register.php";
-let longWait = 2500;
-
-describe("template spec", () => {
+describe("user tests", () => {
   // For each test
   beforeEach(() => {
     cy.visit("http://localhost/mktime/MKTime/views/index.php");
