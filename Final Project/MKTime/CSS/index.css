@@ -11,6 +11,10 @@
   font-weight: 200;
   font-size: 1.3rem;
   font-style: normal;
+
+  @media only screen and (max-width: 992px) {
+    font-size: 1.1rem;
+  }
 }
 .montserrat-300 {
   font-family: "Montserrat", sans-serif;
@@ -23,9 +27,22 @@
 
 .navbar {
   position: relative;
-  height: 15vh;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
+@media only screen and (max-width: 992px) {
+  .nav-list-container {
+    margin-left: 2rem;
+  }
+}
+
+.nav-container {
+  position: relative;
+}
+
+.nav-item {
+  margin-right: 2rem;
+}
 .nav-link:hover {
   cursor: pointer;
   color: #010101;
@@ -36,41 +53,62 @@
   cursor: pointer;
 }
 
-.nav-item {
-  margin-right: 2rem;
-}
-
-.navbar-row {
-  @media only screen and (max-width: 992px) {
-    height: 80vh;
-  }
+.logo-link {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 .logo {
-  width: 16rem;
-  height: 12rem;
-  padding-top: 2rem;
+  width: 15rem;
+  height: 9rem;
+}
+
+.nav-list-container {
+  height: 9rem;
+  margin-left: 30%;
+
+  @media only screen and (max-width: 992px) {
+    height: 10rem;
+    margin-left: 56%;
+  }
+}
+.navbar-burger {
+  margin-top: 3rem;
+  margin-left: 85%;
 }
 .icons {
   width: 25%;
   margin-left: auto;
   @media (max-width: 992px) {
-    width: 50vw;
+    width: 20vw;
+    margin-top: 1rem;
     margin-left: 0;
+    justify-content: space-between !important;
   }
 }
 .user {
-  transform: translateY(50%);
+  transform: translateY(10%);
   width: 100%;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 992px) {
+    width: 30vw;
+    transform: translate(-5%, 30%);
+  }
 }
 .user-info {
   font-size: 1rem;
   align-self: flex-start;
 }
-.welcome-message {
-  font-size: 0.8rem;
-  padding-top: 0.5rem;
+
+/* Products */
+#products {
+  margin-top: 20%;
+
+  @media only screen and (max-width: 992px) {
+    margin-top: 80%;
+  }
 }
 
 /* Cards */
@@ -89,8 +127,7 @@
 }
 
 .register-container,
-.login-container,
-.cart-container {
+.login-container {
   position: relative;
   margin-top: 5rem;
 }

@@ -9,10 +9,10 @@ if (isset($_SESSION['first_name'])) {
 }
 
   echo '
-    <div class="row navbar-row mx-5 mx-lg-1">
+    <div class="row navbar-row fixed-top bg-white">
         <nav class="navbar navbar-expand-lg">
-                    <div class="container-fluid">
-                        <a class="navbar-brand" href="../views/index.php">
+                    <div class="container-fluid nav-container">
+                        <a class="navbar-brand logo-link" href="../views/index.php">
                             <img class="img-fluid logo" src="../images/logo.png" alt="logo">
                         </a>
                         <button
@@ -54,7 +54,7 @@ if (isset($_SESSION['first_name'])) {
                                 ></path>
                             </svg>
                         </button>
-                        <div class="navbar-collapse collapse" id="navbarText" style="height: 193px;">
+                        <div class="navbar-collapse collapse nav-list-container" id="navbarText"">
                             <ul class="navbar-nav mx-auto">
                                 <li class="nav-item">
                                     <a class="nav-link josefin-slab-thin" aria-current="page" href="index.php" data-test="our watches">Our Watches</a>

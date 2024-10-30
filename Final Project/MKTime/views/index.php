@@ -11,8 +11,7 @@
 	# Retrieve items from 'products' database table.
 	$q = "SELECT * FROM products" ;
 	$r = mysqli_query( $link, $q ) ;
-  echo '<div class="container">
-            <div class="row mt-5">
+  echo '<div id="products" class="row">
                 <h1 class="montserrat-300">Our Products</h1>';
 	if ( mysqli_num_rows( $r ) > 0 )
 
@@ -44,7 +43,7 @@ echo
 	' ; }
 
   echo '</div>
-       </div>
+       
   ';
 	
 	include ('footer.php');
