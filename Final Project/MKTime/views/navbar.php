@@ -13,7 +13,7 @@ if (isset($_SESSION['first_name'])) {
         <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid nav-container">
                         <a class="navbar-brand logo-link" href="../views/index.php">
-                            <img class="img-fluid logo" src="../images/logo.png" alt="logo">
+                            <img class="img-fluid logo" src="../assets/images/logo.png" alt="logo">
                         </a>
                         <button
                             class="navbar-burger navbar-toggler p-2 rounded-1 border-0 bg-light"
@@ -57,7 +57,7 @@ if (isset($_SESSION['first_name'])) {
                         <div class="navbar-collapse collapse nav-list-container" id="navbarText"">
                             <ul class="navbar-nav mx-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link josefin-slab-thin" aria-current="page" href="index.php" data-test="our watches">Our Watches</a>
+                                    <a class="nav-link josefin-slab-thin" aria-current="page" href="products.php" data-test="our watches">Our Watches</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link josefin-slab-thin" aria-current="page" href="#" data-test="Smart Watches">Smart Watches</a>

@@ -16,6 +16,7 @@
     font-size: 1.1rem;
   }
 }
+
 .montserrat-300 {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
@@ -56,11 +57,15 @@
 .logo-link {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 4rem;
 }
 .logo {
-  width: 15rem;
-  height: 9rem;
+  width: 12rem;
+
+  @media only screen and (max-width: 576px) {
+    width: 13rem;
+    height: 8rem;
+  }
 }
 
 .nav-list-container {
@@ -102,6 +107,28 @@
   align-self: flex-start;
 }
 
+/* Home */
+#home {
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+    url("images/home-img.jpg");
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position-y: 80px;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 12vh;
+}
+.home-title {
+  font-size: 3rem;
+}
+.home-details {
+  font-size: 1.2rem;
+}
+
 /* Products */
 #products {
   margin-top: 20%;
@@ -109,6 +136,35 @@
   @media only screen and (max-width: 992px) {
     margin-top: 80%;
   }
+}
+
+/* Brands */
+#brands {
+  margin: 10rem 0;
+}
+
+/* Featured */
+#new .featured-container {
+  position: relative;
+}
+
+#new .featured-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: white;
+  font-weight: bold;
+  transition: 0.4s ease;
+  background-color: rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 100%;
+}
+
+.featured-details {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Cards */
