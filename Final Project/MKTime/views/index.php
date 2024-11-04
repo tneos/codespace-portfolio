@@ -28,40 +28,75 @@
                 </div>
             </section>
 
-            <!--Featured-->
+            <!--New Products-->
                 <section id="new" class="w-100">
                     <div class="row p-0 m-0">
-                        <div class="featured-container col-lg-4 col-md-12 col-sm-12 p-0">
+                        <div class="new-prod-container col-lg-4 col-md-12 col-sm-12 p-0">
                             <img src="../assets/images/analog1.jpg" alt="item image" class="img-fluid">
-                            <div class="featured-details">
-                                <h3 class="montserrat-300 py-2 featured-title">Uhrgebiet</h3>
+                            <div class="new-prod-details">
+                                <h3 class="montserrat-300 py-2 new-prod-title">Uhrgebiet</h3>
                                 <button class="btn btn-dark montserrat-300">Shop Now</button>
                             </div>
                         </div>
-                        <div class="featured-container col-lg-4 col-md-12 col-sm-12 p-0">
+                        <div class="new-prod-container col-lg-4 col-md-12 col-sm-12 p-0">
                             <img src="../assets/images/analog2.jpg" alt="item image" class="img-fluid">
-                            <div class="featured-details">
+                            <div class="new-prod-details">
                                 <h3 class="montserrat-300 py-2">Michael Kors</h3>
                                 <button class="btn btn-dark montserrat-300">Shop Now</button>
                             </div>
                         </div>
-                        <div class="featured-container col-lg-4 col-md-12 col-sm-12 p-0">
+                        <div class="new-prod-container col-lg-4 col-md-12 col-sm-12 p-0">
                             <img src="../assets/images/analog3.jpg" alt="item image" class="img-fluid">
-                            <div class="featured-details">
+                            <div class="new-prod-details">
                                 <h3 class="montserrat-300 py-2">Raymond Weil</h3>
                                 <button class="btn btn-dark montserrat-300">Shop Now</button>
                             </div>
                         </div>
                     </div>
                 </section>
+                <!--Featured-->
+    <section id="featured" class="my-5 pb-5">
+      <div class="container text-center mt-5 py-5">
+        <h3 class="montserrat-300">Featured Products</h3>
+        <hr />
+      </div>
+      <div class="row mx-auto container-fluid">
+        <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+          <img class="img-fluid featured-img" src="../assets/images/smart3.jpg" alt="smart watch image" />
+          <h5 class="montserrat-300 py-2 featured-name">Blackview</h5>
+          <h4 class="montserrat-300 py-2 featured-price">£115</h4>
+          <button class="btn btn-light montserrat-300 featured-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+          <img class="img-fluid featured-img" src="../assets/images/smart4.jpg" alt="smart watch image" />
+          <h5 class="montserrat-300 py-2 featured-name">APPLE Watch SE</h5>
+          <h4 class="montserrat-300 py-2 featured-price">£199</h4>
+          <button class="btn btn-light montserrat-300 featured-btn">Buy Now</button>
+        </div>
 
+        <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+          <img class="img-fluid featured-img" src="../assets/images/smart5.jpg" alt="smart watch image" />
+          <h5 class="montserrat-300 py-2 featured-name">Colmi P8 Smart Watch</h5>
+          <h4 class="montserrat-300 py-2 featured-price">£138.99</h4>
+          <button class="btn btn-light montserrat-300 featured-btn">Buy Now</button>
+        </div>
+        <div class="product text-center col-lg-3 col-md-4 col-sm-12">
+          <img class="img-fluid featured-img" src="../assets/images/smart6.jpg" alt="smart watch image" />
+          <h5 class="montserrat-300 py-2 featured-name">Garmin</h5>
+          <h4 class="montserrat-300 py-2 featured-price">£219</h4>
+          <button class="btn btn-light montserrat-300 featured-btn">Buy Now</button>
+        </div>
+      </div>
+    </section>
 
-            
+';
+include('footer.php');
+   echo '         
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
-</html>
-  ';
-  include('footer.php')
+</html>';
+  
+  
 ?>
 
 

@@ -11,7 +11,7 @@ if (isset($_SESSION['first_name'])) {
   echo '
     <div class="row navbar-row fixed-top bg-white">
         <nav class="navbar navbar-expand-lg">
-                    <div class="container-fluid nav-container">
+                    <div class="nav-container">
                         <a class="navbar-brand logo-link" href="../views/index.php">
                             <img class="img-fluid logo" src="../assets/images/logo.png" alt="logo">
                         </a>
@@ -54,7 +54,7 @@ if (isset($_SESSION['first_name'])) {
                                 ></path>
                             </svg>
                         </button>
-                        <div class="navbar-collapse collapse nav-list-container" id="navbarText"">
+                        <div class="navbar-collapse collapse nav-list-container" id="navbarText">
                             <ul class="navbar-nav mx-auto">
                                 <li class="nav-item">
                                     <a class="nav-link josefin-slab-thin" aria-current="page" href="products.php" data-test="our watches">Our Watches</a>
@@ -83,7 +83,7 @@ if (isset($_SESSION['first_name'])) {
                                     id="user-icon"
                                 >
                                 
-                                <img src="../images/basket.svg" alt="basket">
+                                <img src="../assets/images/basket.svg" alt="basket">
                                 
                                 <div class="collapse position-absolute top-100 start-0 user" id="userText">
                                     <a class="btn btn-sm josefin-slab-thin user-info" type="submit" data-test="logout-link" href = "logout.php?redirect=<?php echo base64_encode(curPageURL()); ?>">Logout</a>
@@ -101,12 +101,12 @@ if (isset($_SESSION['first_name'])) {
                                     type="button"
                                     aria-expanded="false"
                                     aria-controls="userText"
-                                    src="../images/person.svg"
+                                    src="../assets/images/person.svg"
                                     alt="person"
                                     id="user-icon"
                                     data-test="user-icon"
                                 >
-                                <img src="../images/basket.svg" alt="basket">
+                                <img src="../assets/images/basket.svg" alt="basket">
                                 <div class="collapse position-absolute top-100 start-0 user" id="userText">
                                     <a class="btn btn-sm josefin-slab-thin user-info" href="login.php" data-test="login-link">Sign In</a>
                                     <a class="btn btn-sm josefin-slab-thin user-info" href="register.php" data-test="create-account-link">Create an account</a>
