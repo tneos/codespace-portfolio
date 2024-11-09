@@ -38,7 +38,7 @@ if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
                             name="email"
                             class="form-control"
                             required
-                            placeholder="* Enter email"
+                            placeholder="Enter email"
                           />
                         </div>
                       </div>
@@ -52,7 +52,7 @@ if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
                             type="password"
                             name="pass"
                             class="form-control"
-                            placeholder="* Enter password"
+                            placeholder="Enter password"
                           />
                         </div>
                       </div>
@@ -68,13 +68,16 @@ if (isset($_SESSION['errors']) && !empty($_SESSION['errors'])) {
                           Login
                         </button>
                       </div>
+                      <div class="form-group">
+                        <p class="montserrat-300">Don't have an account?<a href="register.php" class="link-underline-dark montserrat-300 text-dark mx-2">Register </a></p>
+                      </div>
                     </form>
                   </div>
                   <div
                     class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2"
                   >
                     <img
-                      src="../images/log-in.png"
+                      src="../assets/images/log-in.png"
                       class="img-fluid w-50 mx-auto"
                       alt="Registration image"
                     />

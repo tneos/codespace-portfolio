@@ -11,8 +11,14 @@
 	# Retrieve items from 'products' database table.
 	$q = "SELECT * FROM products" ;
 	$r = mysqli_query( $link, $q ) ;
-  echo '<div id="products" class="row">
-                <h1 class="montserrat-300">Our Products</h1>';
+  echo '
+ <body>
+  <div id="products">
+     <h1 class="montserrat-300">Our Products</h1>
+                <hr/>
+    <div class="row m-2">
+                
+                ';
 	if ( mysqli_num_rows( $r ) > 0 )
 
     while ( $row = mysqli_fetch_array( $r, MYSQLI_ASSOC ))
@@ -43,7 +49,7 @@ echo
 	' ; }
 
   echo '</div>
-       
+       </div>
   ';
 	
 	include ('footer.php');

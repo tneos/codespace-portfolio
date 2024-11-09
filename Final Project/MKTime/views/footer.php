@@ -1,5 +1,5 @@
 <footer>
-      <h3 class="montserrat-300 py-2 text-white text-center footer-title">Useful Info</h3>
+      <h3 class="montserrat-300 py-3 text-white text-center footer-title">Useful Info</h3>
       <hr />
       <div class="container d-flex">
         <ul class="footer-list col-lg-6 col-md-12">
@@ -25,6 +25,11 @@
           </a>
         </ul>
       </div>
-      <p class="m-0 text-center montserrat-300 text-white">Copyright &copy; Thomas Neos</p>
+      <p class="m-0 text-center montserrat-300 text-white copyright">Copyright &copy; Thomas Neos</p>
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+
+  
 

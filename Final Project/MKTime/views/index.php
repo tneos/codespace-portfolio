@@ -8,9 +8,9 @@
         
            
                 <!--Home-->
-            </div>
+            
             <section id="home">
-                    <div class="container">
+                    <div class="container home-container">
                         <h5 class="py-1 montserrat-300 home-title">NEW ARRIVALS</h5>
                         <h6 class="py-2 montserrat-300 home-details">Find your favourite brand</h6>
                         <h6 class="py-2 montserrat-300 home-details">Discover our selection of some of the finest luxury watches on the market</h6>
@@ -90,13 +90,7 @@
     </section>
 
 ';
-include('footer.php');
-   echo '         
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-</html>';
-  
-  
+include('footer.php'); 
 ?>
 
 

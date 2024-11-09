@@ -1,7 +1,9 @@
 <?php # DISPLAY SHOPPING CART PAGE.
+include('head.php');
+include('navbar.php');
 
 # Access session.
-session_start() ;
+//session_start() ;
 
 
 # Redirect if not logged in.
@@ -9,7 +11,7 @@ session_start() ;
 
 # Set page title and display header section.
 $page_title = 'Cart' ;
-include ( 'head.php' ) ;
+
 
 
 # Check if form has been submitted for update.
@@ -44,8 +46,10 @@ if (!empty($_SESSION['cart']))
   $r = mysqli_query ($dbc, $q);
 
   # Display body section with a form and a table.
-  echo '<section class="h-100 gradient-custom">
-      <div class="container py-5">
+  echo '<section id="cart" class="h-50">
+      <div class="container cart-container py-5">
+      <h1 class="montserrat-300">Your Cart</h1>
+      <hr />
         <div class="row d-flex justify-content-center my-4 cart-container">
           <button class="btn btn-light back-home">Back Home</button>
           <div class="col-md-8">
@@ -53,7 +57,7 @@ if (!empty($_SESSION['cart']))
               <div class="card-header py-3">
                 <h6 class="mb-0 montserrat-300 display-6">Cart - 2 items</h6>
               </div>
-              <div class="card-body">
+              <div class="card-body scroll">
           ';
   while ($row = mysqli_fetch_array ($r, MYSQLI_ASSOC))
   {
@@ -124,10 +128,21 @@ if (!empty($_SESSION['cart']))
 }
 else
 # Or display a message.
-{ echo '<p>Your cart is currently empty.</p>' ; }
+{ echo '
+  <section id="cart" class="h-50">
+      <div class="container cart-container py-5">
+      <h1 class="montserrat-300">Your Cart</h1>
+      <hr />
+  <div class="row">
+  <p>Your cart is currently empty.</p>
+  </div>
+  </div>
+  </section>
+  '
+   ; }
 
 # Create navigation links.
-echo '<p><a href="index.php">Shop</a> | <a href="checkout.php?total='.$total.'">Checkout</a> | <a href="forum.php">Forum</a> | <a href="index.php">Home</a> | <a href="#">Logout</a></p>' ;
+//echo '<p><a href="index.php">Shop</a> | <a href="checkout.php?total='.$total.'">Checkout</a> | <a href="forum.php">Forum</a> | <a href="index.php">Home</a> | <a href="#">Logout</a></p>' ;
 
 # Display footer section.
 include ( 'footer.php' ) ;

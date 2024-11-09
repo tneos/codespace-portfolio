@@ -1,6 +1,6 @@
 <?php 
 
-# Connect  on 'localhost, username, password, database name'.
+# Connect to database
 
 $link = mysqli_connect('localhost','root','','mktime'); 
 

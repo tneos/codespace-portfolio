@@ -31,18 +31,18 @@ if (isset($_GET['item_id'])) {
 
 {
 echo '
-   <section class="py-5">
-        <div class="container px-4 px-lg-5 my-5">
+   <body>
+   <section class="individual-product px-4 px-lg-5 m-5">
           <div class="row gx-4 gx-lg-5 align-items-center">
-            <div class="col-md-6" id='.$individual_item['id'].'>
+            <div class="col-lg-5 col-md-6 col-sm-12" id='.$individual_item['id'].'>
               <img
-                class="card-img-top mb-5 mb-md-0"
+                class="img-fluid w-100 pb-1"
                 src='.$individual_item['img'].'
                 alt="..."
               />
             </div>
-            <div class="col-md-6">
-              <h1 class="display-5 montserrat-300">'.$individual_item['name'].'</h1>
+            <div class="col-lg-7 col-md-6 col-12">
+              <h1 class="display-5 montserrat-300 my-3">'.$individual_item['name'].'</h1>
               <div class="fs-5 mb-5">
                 <span class="h-25 montserrat-300">£'.$individual_item['price'].'</span>
                 
@@ -65,7 +65,6 @@ echo '
               </div>
             </div>
           </div>
-        </div>
       </section>
   ';
 }

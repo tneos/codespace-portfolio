@@ -194,13 +194,16 @@ $errors[] =
                           Register
                         </button>
                       </div>
+                      <div class="form-group">
+                        <p class="montserrat-300">Do you have an account?<a href="login.php" class="link-underline-dark montserrat-300 text-dark mx-2">Login</a></p>
+                      </div>
                     </form>
                   </div>
                   <div
                     class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2"
                   >
                     <img
-                      src="../images/registration.png"
+                      src="../assets/images/registration.png"
                       class="img-fluid w-50 mx-auto"
                       alt="Registration image"
                     />
