@@ -19,56 +19,67 @@ if (isset($_GET['item_id'])) {
                         "img" => $row_item['item_img'],
                         "price" => $row_item['item_price']);
     } else {
-        $individual_item = array("img" => "img/no_img.jpg");
+        header('location: index.php');
     }
 
 
+?>
 
 
 
 
 
 
-{
-echo '
    <body>
    <section class="individual-product px-4 px-lg-5 m-5">
           <div class="row gx-4 gx-lg-5 align-items-center">
-            <div class="col-lg-5 col-md-6 col-sm-12" id='.$individual_item['id'].'>
+            
+
+
+            <div class="col-lg-5 col-md-6 col-sm-12" id='<?php echo $individual_item['id']; ?>'>
               <img
                 class="img-fluid w-100 pb-1"
-                src='.$individual_item['img'].'
-                alt="..."
+                src='<?php echo $individual_item['img']; ?>'
+                alt="product image"
               />
             </div>
             <div class="col-lg-7 col-md-6 col-12">
-              <h1 class="display-5 montserrat-300 my-3">'.$individual_item['name'].'</h1>
+              <h1 class="display-5 montserrat-300 my-3"><?php echo $individual_item['name']; ?></h1>
               <div class="fs-5 mb-5">
-                <span class="h-25 montserrat-300">£'.$individual_item['price'].'</span>
-                
-              </div>
-              <p class="lead card-text h-25 montserrat-300">
-                '.$individual_item['desc'].'
+                <span class="h-25 montserrat-300">£<?php echo $individual_item['price']; ?></span>
+                <p class="lead card-text h-25 montserrat-300">
+                <?php echo $individual_item['desc']; ?>
               </p>
-              <div class="d-flex">
-                <input
+                <form method="POST" action="cart.php">
+                   <input type="hidden" name="item_id" value="<?php echo $individual_item['id'] ?>"/>
+                   <input type="hidden" name="item_image" value="<?php echo $individual_item['img']; ?>"/>
+                   <input type="hidden" name="item_name" value="<?php echo $individual_item['name']; ?>"/>
+                   <input type="hidden" name="item_price" value="<?php echo $individual_item['price']; ?>"/>
+                   <input type="hidden" name="item_description" value="<?php echo $individual_item['description']; ?>"/>
+                   <div class="d-flex">
+                      <input
                   class="form-control text-center me-3"
                   id="inputQuantity"
+                  name="item_quantity"
                   type="num"
                   value="1"
                   style="max-width: 3rem"
-                />
-                <a class="btn btn-outline-dark flex-shrink-0"p href="addToCart.php?id='.$individual_item['id'].'">
-                  <i class="bi-cart-fill me-1"></i>
+                    />
+                     <button type="submit" name="add_to_cart" class="btn btn-outline-dark flex-shrink-0"p>
                   Add to cart
-                </a>
+                      </button>
+                  </div>
+              
+                </form> 
               </div>
+              
+              
             </div>
+            
           </div>
       </section>
-  ';
-}
-	
+
+	<?php 
 	include ('footer.php');
 
 

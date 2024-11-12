@@ -106,7 +106,9 @@ if (isset($_SESSION['first_name'])) {
                                     id="user-icon"
                                     data-test="user-icon"
                                 >
-                                <img src="../assets/images/basket.svg" alt="basket">
+                                <a href="cart.php">
+                                <img src="../assets/images/basket.svg" alt="basket" class="basket-icon">
+                                </a>
                                 <div class="collapse position-absolute top-100 start-0 user" id="userText">
                                     <a class="btn btn-sm josefin-slab-thin user-info" href="login.php" data-test="login-link">Sign In</a>
                                     <a class="btn btn-sm josefin-slab-thin user-info" href="register.php" data-test="create-account-link">Create an account</a>

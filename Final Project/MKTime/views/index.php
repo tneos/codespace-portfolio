@@ -1,9 +1,8 @@
 <?php 
   include('head.php');
   include('navbar.php');
+?>
 
-  echo
-  '
    <body>
         
            
@@ -61,37 +60,21 @@
         <hr />
       </div>
       <div class="row mx-auto container-fluid">
+        <?php include('../actions/get_featured_products.php') ?>
+
+        <?php while($row = $featured_products->fetch_assoc()){ ?>
         <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-          <img class="img-fluid featured-img" src="../assets/images/smart3.jpg" alt="smart watch image" />
-          <h5 class="montserrat-300 py-2 featured-name">Blackview</h5>
-          <h4 class="montserrat-300 py-2 featured-price">£115</h4>
-          <button class="btn btn-light montserrat-300 featured-btn">Buy Now</button>
-        </div>
-        <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-          <img class="img-fluid featured-img" src="../assets/images/smart4.jpg" alt="smart watch image" />
-          <h5 class="montserrat-300 py-2 featured-name">APPLE Watch SE</h5>
-          <h4 class="montserrat-300 py-2 featured-price">£199</h4>
-          <button class="btn btn-light montserrat-300 featured-btn">Buy Now</button>
+          <img class="img-fluid featured-img" src="<?php echo $row['item_img'] ?>" alt="item image" />
+          <h5 class="montserrat-300 py-2 featured-name"><?php echo $row['item_name'] ?></h5>
+          <h4 class="montserrat-300 py-2 featured-price">£<?php echo $row['item_price'] ?></h4>
+          <a href="<?php echo "singleProduct.php?item_id=".$row['item_id']; ?>"><button class="btn btn-light montserrat-300 featured-btn">Buy Now</button></a>
         </div>
 
-        <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-          <img class="img-fluid featured-img" src="../assets/images/smart5.jpg" alt="smart watch image" />
-          <h5 class="montserrat-300 py-2 featured-name">Colmi P8 Smart Watch</h5>
-          <h4 class="montserrat-300 py-2 featured-price">£138.99</h4>
-          <button class="btn btn-light montserrat-300 featured-btn">Buy Now</button>
-        </div>
-        <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-          <img class="img-fluid featured-img" src="../assets/images/smart6.jpg" alt="smart watch image" />
-          <h5 class="montserrat-300 py-2 featured-name">Garmin</h5>
-          <h4 class="montserrat-300 py-2 featured-price">£219</h4>
-          <button class="btn btn-light montserrat-300 featured-btn">Buy Now</button>
-        </div>
+        <?php } ?>
       </div>
     </section>
 
-';
-include('footer.php'); 
-?>
+<?php include('footer.php'); ?>
 
 
     

@@ -67,6 +67,9 @@
 .user_icon {
   cursor: pointer;
 }
+.basket-icon {
+  transform: translateY(-2px);
+}
 
 .logo-link {
   position: absolute;
@@ -143,12 +146,13 @@ hr {
 #home {
   background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
     url("../assets/images/home-img.jpg");
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-size: cover;
-  background-position: center, center;
-  background-attachment: fixed;
+  background-position-x: center;
+  background-position-y: 80px;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -160,6 +164,7 @@ hr {
     margin-top: 50vh;
   }
 }
+
 .home-container {
   margin-top: 25%;
 
@@ -167,6 +172,7 @@ hr {
     margin: 70% 1rem 0 1rem;
   }
 }
+
 .home-title {
   font-size: 3rem;
 
@@ -186,7 +192,7 @@ hr {
   margin-top: 20%;
 
   @media only screen and (max-width: 992px) {
-    margin-top: 90%;
+    margin-top: 80%;
   }
 }
 
@@ -242,7 +248,7 @@ hr {
   opacity: 0;
   transition: 0.3s all;
 }
-.featured-img:hover ~ .featured-btn {
+.product:hover .featured-btn {
   transform: translateY(0px);
   opacity: 1;
 }
@@ -254,6 +260,10 @@ hr {
 .card-title {
   font-size: 1.4rem;
 }
+.card-header-title {
+  font-size: 1.8rem;
+}
+
 .card-img-top {
   height: 50%;
 }
@@ -262,8 +272,14 @@ hr {
   font-size: 0.9rem;
 }
 
+/* Individual product */
+.individual-product {
+  margin-top: 15% !important;
+}
+
 .register-container,
-.login-container {
+.login-container,
+.cart-container {
   position: relative;
   margin-top: 5rem;
 }
@@ -290,21 +306,6 @@ hr {
   width: 10rem;
 }
 
-/* Individual product */
-#products {
-  text-align: center;
-}
-.individual-product {
-  padding-top: 5rem;
-
-  @media only screen and (max-width: 992px) {
-    margin: 40vh 5vw 2rem 5vw !important;
-  }
-  @media only screen and (max-width: 768px) {
-    margin: 40vh auto 2rem auto;
-  }
-}
-
 /* Cart */
 #cart {
   margin-top: 10%;
@@ -319,12 +320,28 @@ hr {
   overflow-y: auto;
 }
 
+/* Account */
+.card-col {
+  height: 100%;
+}
+.account-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/* Checkout */
+.checkout-scroll {
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
 /* Footer */
 footer {
   background-color: #3333;
   height: 50vh;
   position: relative;
-  margin-top: 2rem;
 }
 .footer-list {
   list-style: none;
@@ -340,5 +357,4 @@ footer {
   position: absolute;
   bottom: 5%;
   left: 1rem;
-  font-size: 0.8rem;
 }
