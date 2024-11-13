@@ -112,7 +112,7 @@
                     <!-- Image -->
                     <div
                       class="bg-image hover-overlay hover-zoom ripple rounded"
-                      data-mdb-ripple-color="light"
+                      
                     >
                       <img src="<?php echo $value['item_img'] ?>" class="w-100" alt="Item image" />
                       <a href="#!">
