@@ -333,6 +333,10 @@ hr {
   max-height: 50vh;
   overflow-y: auto;
 }
+.dates {
+  display: flex;
+  justify-content: center;
+}
 .delete-btn {
   background-color: #fff;
   border: none;

@@ -22,6 +22,9 @@
         'item_quantity' => $_POST['item_quantity'],
       );
       $_SESSION['cart'][$_POST['item_id']] = $item_array;
+      foreach($item_array as $value){
+        echo $value;
+      }
       }
       // item has already been added
       else {
@@ -84,6 +87,14 @@
   // Collect prices and quantities into separate arrays
   $items_total_price = array_column($_SESSION['cart'], 'item_price');
   $items_quantity = array_column($_SESSION['cart'], 'item_quantity');
+
+  // Get new date time
+  $date = new DateTime();
+  $currentDate = $date->format('d/m/Y');
+  $date->modify('1 week');
+  $futureDate = $date->format('d/m/Y');
+
+  
  
 ?>
 
@@ -96,7 +107,11 @@
           <div class="col-md-8">
             <div class="card mb-4">
               <div class="card-header py-3">
-                <h6 class="mb-0 montserrat-300 display-6">Cart - <?php echo sizeof($_SESSION['cart']) ?> items</h6>
+                <?php if(count($_SESSION['cart']) === 1){ ?>
+                <h6 class="mb-0 montserrat-300 display-6">Cart - <?php echo (count($_SESSION['cart'])); ?> item</h6>
+                <?php } else { ?>
+                  <h6 class="mb-0 montserrat-300 display-6">Cart - <?php echo (count($_SESSION['cart'])); ?> items</h6>
+                 <?php } ?>
               </div>
               
               <div class="card-body scroll">
@@ -181,7 +196,11 @@
             <div class="card mb-4">
               <div class="card-body">
                 <p class="montserrat-300" style="font-weight: 500">Expected shipping delivery</p>
-                <p class="mb-0 montserrat-300">12.10.2020 - 14.10.2020</p>
+                <div class="dates">
+                    <p class="mb-0 montserrat-300"><?php echo $currentDate;  ?>-</p>
+                    <p class="mb-0 montserrat-300"><?php echo $futureDate;  ?></p>
+                </div>
+                
               </div>
             </div>
             <div class="card mb-4 mb-lg-0">
@@ -232,12 +251,11 @@
                   >
                     Shipping
                     <span>
-                      £<?php
-                        if(empty($_SESSION['cart'])) {
-                          echo 0;
-                        }else {
-                          echo 10;
-                        }
+                      £<?php if(empty($_SESSION['cart'])) {
+                        echo 0;
+                      }else {
+                        echo 10;
+                      }
                        ?>
                     </span>
                   </li>
@@ -250,7 +268,13 @@
                         <p class="mb-0 montserrat-300" style="font-weight: 400">(including VAT)</p>
                       </strong>
                     </div>
-                    <span>£<?php echo number_format((float)array_sum(array_map("calculateItemTotal", $items_total_price, $items_quantity )) + (empty($_SESSION['cart'] ? 0 : 10)), 2, '.', ''); ?></span>
+                    <span>£<?php 
+                      if(empty($_SESSION['cart'])) {
+                        echo number_format((float)array_sum(array_map("calculateItemTotal", $items_total_price, $items_quantity )) +  0, 2, '.', '');
+                      }else {
+                        echo number_format((float)array_sum(array_map("calculateItemTotal", $items_total_price, $items_quantity )) +  10, 2, '.', '');
+                      }
+                     ?></span>
                   </li>
                 </ul>
 
