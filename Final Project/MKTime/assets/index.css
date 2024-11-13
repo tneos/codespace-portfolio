@@ -323,6 +323,12 @@ hr {
   text-align: center;
 }
 
+.quantity-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .scroll {
   max-height: 50vh;
   overflow-y: auto;

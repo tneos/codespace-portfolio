@@ -58,9 +58,33 @@
     $item_id = $_POST['item_id'];
     unset($_SESSION['cart'][$item_id]);
   }
+  // Edit number of items
+  else if(isset($_POST['edit_quantity'])){
+    // Get id and quantity from form
+    $item_id = $_POST['item_id'];
+    $item_quantity = $_POST['item_quantity'];
+
+    // Extract item array from session
+    $item_array = $_SESSION['cart'][$item_id];
+    // Update quantity
+    $item_array['item_quantity'] = $item_quantity;
+    // Return array back to session
+    $_SESSION['cart'][$item_id] = $item_array;
+  }
   else {
     header('location: index.php');
   }
+
+
+  // For every item calculate total price
+  function calculateItemTotal($price, $quantity) {
+     
+     return($price * $quantity);
+  }
+  // Collect prices and quantities into separate arrays
+  $items_total_price = array_column($_SESSION['cart'], 'item_price');
+  $items_quantity = array_column($_SESSION['cart'], 'item_quantity');
+ 
 ?>
 
   <body>
@@ -76,7 +100,12 @@
               </div>
               
               <div class="card-body scroll">
-                <?php foreach($_SESSION['cart'] as $value) { ?>
+                <?php if(empty($_SESSION['cart'])){ ?>
+                    <div class="row">
+                          <h3 class="card-text montserrat-300 text-center">Your cart is empty</h3>
+                    </div>
+                <?php } else {
+                foreach($_SESSION['cart'] as $value) { ?>
                 <!-- Single item -->
                 <div class="row">
                   <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
@@ -106,11 +135,13 @@
                   <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
                     <!-- Quantity -->
                     <div class="d-flex mb-4" style="max-width: 300px">
-                      <div data-mdb-input-init class="form-outline">
-                        <input
+                      <div class="form-outline">
+                        <form method="POST" action="cart.php" class="quantity-form">
+                          <input type="hidden" name="item_id" value="<?php echo $value['item_id']; ?>"/>
+                          <input
                           id="form1"
                           min="0"
-                          name="quantity"
+                          name="item_quantity"
                           value="<?php echo $value['item_quantity']; ?>"
                           type="number"
                           class="form-control"
@@ -122,12 +153,15 @@
                           style="font-size: 0.9rem"
                           >Quantity</label
                         >
+                          <input type="submit" class="edit-btn btn btn-light montserrat-300" value="edit" name="edit_quantity">
+                        </form>
+                        
                       </div>
                     </div>
                     <!-- Quantity -->
 
                     <!-- Price -->
-                    <p class="text-start">£<?php echo $value['item_price']; ?></p>
+                    <p class="text-start">£<?php echo number_format((float)$value['item_quantity'] * $value['item_price'], 2, '.', ''); ?></p>
                     <!-- Price -->
                   </div>
                   <div class="col-md-1 col-lg-1 col-xl-1 text-end">
@@ -140,7 +174,8 @@
                     
                   </div>
                 </div>
-                <?php } ?>
+                <?php }
+              } ?>
               </div>
             </div>
             <div class="card mb-4">
@@ -190,13 +225,21 @@
                     class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0 montserrat-300"
                   >
                     Products
-                    <span>$53.98</span>
+                    <span>£<?php echo number_format((float)array_sum(array_map("calculateItemTotal", $items_total_price, $items_quantity )), 2, '.', ''); ?></span>
                   </li>
                   <li
                     class="list-group-item d-flex justify-content-between align-items-center px-0 montserrat-300"
                   >
                     Shipping
-                    <span>Gratis</span>
+                    <span>
+                      £<?php
+                        if(empty($_SESSION['cart'])) {
+                          echo 0;
+                        }else {
+                          echo 10;
+                        }
+                       ?>
+                    </span>
                   </li>
                   <li
                     class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3"
@@ -207,7 +250,7 @@
                         <p class="mb-0 montserrat-300" style="font-weight: 400">(including VAT)</p>
                       </strong>
                     </div>
-                    <span>£53.98</span>
+                    <span>£<?php echo number_format((float)array_sum(array_map("calculateItemTotal", $items_total_price, $items_quantity )) + (empty($_SESSION['cart'] ? 0 : 10)), 2, '.', ''); ?></span>
                   </li>
                 </ul>
 
