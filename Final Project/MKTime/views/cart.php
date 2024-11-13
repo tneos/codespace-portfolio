@@ -2,27 +2,68 @@
   include('head.php');
   include('navbar.php');
 
-  session_start();
+  
 
   if(isset($_POST['add_to_cart'])){
 
-    // If user has already added a product to cart
+    // If there are items in the cart
     if(isset($_SESSION['cart'])){
 
+      $items_array_ids = array_column($_SESSION['cart'], 'item_id');
+      // If item not already been to cart
+      if(!in_array($_POST['item_id'], $items_array_ids)){
+        
+       $item_array = array(
+        'item_id' => $_POST['item_id'],
+        'item_name' => $_POST['item_name'],
+        'item_desc' => $_POST['item_desc'],
+        'item_img' => $_POST['item_img'],
+        'item_price' => $_POST['item_price'],
+        'item_quantity' => $_POST['item_quantity'],
+      );
+      $_SESSION['cart'][$_POST['item_id']] = $item_array;
+      }
+      // item has already been added
+      else {
+         echo '<script>alert("Product was already added");</script>';
+         
+      }
+
     }
-    // If this is the first product
+    // If this is the first item in the cart
     else{
       $item_id = $_POST['item_id'];
+      $item_name = $_POST['item_name'];
+      $item_desc = $_POST['item_desc'];
+      $item_img = $_POST['item_img'];
+      $item_price = $_POST['item_price'];
+      $item_quantity = $_POST['item_quantity'];
+
+      $item_array = array(
+        'item_id' => $item_id,
+        'item_name' => $item_name,
+        'item_desc' => $item_desc,
+        'item_img' => $item_img,
+        'item_price' => $item_price,
+        'item_quantity' => $item_quantity,
+      );
+
+      $_SESSION['cart'][$item_id] = $item_array;
     }
 
-  }else {
+  
+  }
+  // Remove item from cart
+  else if(isset($_POST['remove_item'])) {
+    $item_id = $_POST['item_id'];
+    unset($_SESSION['cart'][$item_id]);
+  }
+  else {
     header('location: index.php');
   }
 ?>
 
   <body>
-    
-
     <section id="cart" class="h-50">
       <div class="container cart-container py-5">
         <h1 class="montserrat-300">Your Cart</h1>
@@ -31,128 +72,11 @@
           <div class="col-md-8">
             <div class="card mb-4">
               <div class="card-header py-3">
-                <h6 class="mb-0 montserrat-300 display-6">Cart - 2 items</h6>
+                <h6 class="mb-0 montserrat-300 display-6">Cart - <?php echo sizeof($_SESSION['cart']) ?> items</h6>
               </div>
-              <div class="card-body scroll">
-                <!-- Single item -->
-                <div class="row">
-                  <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                    <!-- Image -->
-                    <div
-                      class="bg-image hover-overlay hover-zoom ripple rounded"
-                      data-mdb-ripple-color="light"
-                    >
-                      <img src="../assets/images/analog4.jpg" class="w-100" alt="Blue Jeans Jacket" />
-                      <a href="#!">
-                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
-                      </a>
-                    </div>
-                    <!-- Image -->
-                  </div>
-
-                  <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                    <!-- Data -->
-                    <h6 class="card-title montserrat-300"><strong>Edifice</strong></h6>
-                    <p class="card-text montserrat-300">
-                      Casio Edifice Classic EFV-C120D-2AEF Ana-Digi Chronograph Watch.
-                    </p>
-
-                    <!-- Data -->
-                  </div>
-
-                  <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-                    <!-- Quantity -->
-                    <div class="d-flex mb-4" style="max-width: 300px">
-                      <div data-mdb-input-init class="form-outline">
-                        <input
-                          id="form1"
-                          min="0"
-                          name="quantity"
-                          value="1"
-                          type="number"
-                          class="form-control"
-                          style="width: 4rem"
-                        />
-                        <label
-                          class="form-label montserrat-300"
-                          for="form1"
-                          style="font-size: 0.9rem"
-                          >Quantity</label
-                        >
-                      </div>
-                    </div>
-                    <!-- Quantity -->
-
-                    <!-- Price -->
-                    <p class="text-start">£17.99</p>
-                    <!-- Price -->
-                  </div>
-                  <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                    <i class="material-icons">delete</i>
-                  </div>
-                </div>
-
-                <!-- Single item -->
-                <div class="row">
-                  <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                    <!-- Image -->
-                    <div
-                      class="bg-image hover-overlay hover-zoom ripple rounded"
-                      data-mdb-ripple-color="light"
-                    >
-                      <img src="../assets/images/analog4.jpg" class="w-100" alt="Blue Jeans Jacket" />
-                      <a href="#!">
-                        <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
-                      </a>
-                    </div>
-                    <!-- Image -->
-                  </div>
-
-                  <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                    <!-- Data -->
-                    <h6 class="card-title montserrat-300"><strong>Edifice</strong></h6>
-                    <p class="card-text montserrat-300">
-                      Casio Edifice Classic EFV-C120D-2AEF Ana-Digi Chronograph Watch.
-                    </p>
-
-                    <!-- Data -->
-                  </div>
-
-                  <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
-                    <!-- Quantity -->
-                    <div class="d-flex mb-4" style="max-width: 300px">
-                      <div data-mdb-input-init class="form-outline">
-                        <input
-                          id="form1"
-                          min="0"
-                          name="quantity"
-                          value="1"
-                          type="number"
-                          class="form-control"
-                          style="width: 4rem"
-                        />
-                        <label
-                          class="form-label montserrat-300"
-                          for="form1"
-                          style="font-size: 0.9rem"
-                          >Quantity</label
-                        >
-                      </div>
-                    </div>
-                    <!-- Quantity -->
-
-                    <!-- Price -->
-                    <p class="text-start">£17.99</p>
-                    <!-- Price -->
-                  </div>
-                  <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                    <i class="material-icons">delete</i>
-                  </div>
-                </div>
-                <!-- Single item -->
-
               
-
+              <div class="card-body scroll">
+                <?php foreach($_SESSION['cart'] as $value) { ?>
                 <!-- Single item -->
                 <div class="row">
                   <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
@@ -161,7 +85,7 @@
                       class="bg-image hover-overlay hover-zoom ripple rounded"
                       data-mdb-ripple-color="light"
                     >
-                      <img src="../assets/images/analog2.jpg" class="w-100" />
+                      <img src="<?php echo $value['item_img'] ?>" class="w-100" alt="Item image" />
                       <a href="#!">
                         <div class="mask" style="background-color: rgba(251, 251, 251, 0.2)"></div>
                       </a>
@@ -171,8 +95,10 @@
 
                   <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
                     <!-- Data -->
-                    <h6 class="card-title montserrat-300"><strong>Michael Kors</strong></h6>
-                    <p class="card-text montserrat-300">Oversized Lexington Silver-Tone Watch</p>
+                    <h6 class="card-title montserrat-300"><strong><?php echo $value['item_name']; ?></strong></h6>
+                    <p class="card-text montserrat-300">
+                      <?php echo $value['item_desc']; ?>
+                    </p>
 
                     <!-- Data -->
                   </div>
@@ -185,7 +111,7 @@
                           id="form1"
                           min="0"
                           name="quantity"
-                          value="1"
+                          value="<?php echo $value['item_quantity']; ?>"
                           type="number"
                           class="form-control"
                           style="width: 4rem"
@@ -201,15 +127,20 @@
                     <!-- Quantity -->
 
                     <!-- Price -->
-                    <p class="text-start">£17.99</p>
-
+                    <p class="text-start">£<?php echo $value['item_price']; ?></p>
                     <!-- Price -->
                   </div>
                   <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                    <i class="material-icons">delete</i>
+                    <form method="POST" action="cart.php">
+                      <input type="hidden" name="item_id" value="<?php echo $value['item_id']; ?>">
+                      <button type="submit" name="remove_item" class="delete-btn">
+                         <i class="material-icons">delete</i>
+                      </button>
+                    </form>
+                    
                   </div>
                 </div>
-                <!-- Single item -->
+                <?php } ?>
               </div>
             </div>
             <div class="card mb-4">

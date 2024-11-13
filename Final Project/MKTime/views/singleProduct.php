@@ -52,10 +52,10 @@ if (isset($_GET['item_id'])) {
               </p>
                 <form method="POST" action="cart.php">
                    <input type="hidden" name="item_id" value="<?php echo $individual_item['id'] ?>"/>
-                   <input type="hidden" name="item_image" value="<?php echo $individual_item['img']; ?>"/>
+                   <input type="hidden" name="item_img" value="<?php echo $individual_item['img']; ?>"/>
                    <input type="hidden" name="item_name" value="<?php echo $individual_item['name']; ?>"/>
                    <input type="hidden" name="item_price" value="<?php echo $individual_item['price']; ?>"/>
-                   <input type="hidden" name="item_description" value="<?php echo $individual_item['description']; ?>"/>
+                   <input type="hidden" name="item_desc" value="<?php echo $individual_item['desc']; ?>"/>
                    <div class="d-flex">
                       <input
                   class="form-control text-center me-3"

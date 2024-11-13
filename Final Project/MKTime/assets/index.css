@@ -192,7 +192,7 @@ hr {
   margin-top: 20%;
 
   @media only screen and (max-width: 992px) {
-    margin-top: 80%;
+    margin-top: 90%;
   }
 }
 
@@ -275,6 +275,10 @@ hr {
 /* Individual product */
 .individual-product {
   margin-top: 15% !important;
+
+  @media only screen and (max-width: 992px) {
+    margin-top: 90% !important;
+  }
 }
 
 .register-container,
@@ -309,6 +313,10 @@ hr {
 /* Cart */
 #cart {
   margin-top: 10%;
+
+  @media only screen and (max-width: 992px) {
+    margin-top: 80%;
+  }
 }
 
 .cart-container {
@@ -318,6 +326,10 @@ hr {
 .scroll {
   max-height: 50vh;
   overflow-y: auto;
+}
+.delete-btn {
+  background-color: #fff;
+  border: none;
 }
 
 /* Account */
