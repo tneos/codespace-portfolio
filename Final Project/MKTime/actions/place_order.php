@@ -9,14 +9,11 @@ if(isset($_POST['place_order'])) {
     $name = $_POST['user_name'];
     $expDate = $_POST['exp_date'];
     $cvv = $_POST['cvv'];
-    //$cvv = "pass";
     // Testing database(login functionality to be implemented)
    $userId = 2;
    $orderDate = date('Y-m-d H:i:s');
 
-//    echo gettype($total), $total,  gettype($cardNumber), gettype($name), gettype($expDate), gettype($cvv), gettype($orderDate);
-//    echo $total, $cardNumber, $name, $expDate, $cvv, $orderDate, $userId;
-     echo gettype($total), $total;
+
 
 
    $stmt = $link->prepare("INSERT INTO orders (order_total, order_name, user_id, card_expiration, cvv, card_number, order_date)
