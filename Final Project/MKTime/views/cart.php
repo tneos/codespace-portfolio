@@ -83,6 +83,7 @@
   function calculateItemTotal($price, $quantity) {
      
      return($price * $quantity);
+   
   }
   // Collect prices and quantities into separate arrays
   $items_total_price = array_column($_SESSION['cart'], 'item_price');
@@ -93,6 +94,8 @@
   $currentDate = $date->format('d/m/Y');
   $date->modify('1 week');
   $futureDate = $date->format('d/m/Y');
+
+  
 
   
  
@@ -278,14 +281,17 @@
                   </li>
                 </ul>
 
-                <button
-                  type="button"
-                  data-mdb-button-init
-                  data-mdb-ripple-init
+
+                <form method="POST" action="checkout.php">
+                    <input
+                  type="submit"
                   class="btn btn-light montserrat-300"
-                >
-                  Go to checkout
-                </button>
+                  name="checkout"
+                  value="Go to checkout"
+                />
+                  
+                </form>
+                
               </div>
             </div>
           </div>
