@@ -1,6 +1,7 @@
 <?php 
 session_start();
 require('../connect_db.php');
+require('login_tools.php');
 
 if(isset($_POST['place_order'])) {
     // 1. Get user info and store it in database
@@ -10,7 +11,7 @@ if(isset($_POST['place_order'])) {
     $expDate = $_POST['exp_date'];
     $cvv = $_POST['cvv'];
     // Testing database(login functionality to be implemented)
-   $userId = 2;
+   $userId = $_SESSION['user_id'];
    $orderDate = date('Y-m-d H:i:s');
 
 
@@ -21,17 +22,37 @@ if(isset($_POST['place_order'])) {
    $stmt->bind_param('dsissss', $total, $name, $userId, $expDate, $cvv, $cardNumber, $orderDate);
 
    $stmt->execute();
+   // 2. Issue new order and store order info in database
    // Retrieve order_id from database
    $orderId = $stmt->insert_id;
 
-   echo $orderId;
-    // 2. Get products from cart (session)
+    // 3. Get products from cart (session)
+    foreach($_SESSION['cart'] as $key => $value) {
+        $product = $_SESSION['cart'][$key];
+        $item_id = $product['item_id'];
+        $item_name = $product['item_name'];
+        $item_desc = $product['item_desc'];
+        $item_img = $product['item_img'];
+        $item_price = $product['item_price'];
+        $item_quantity = $product['item_quantity'];
+        
+        // 4. Store each single item in order_items table
+        $stmt1 = $link->prepare("INSERT INTO order_contents(order_id, item_id, item_quantity, item_price, user_id, item_name, item_desc, item_img)
+                        VALUES (?,?,?,?,?,?,?,?)");
+        $stmt1->bind_param('iiisisss', $orderId, $item_id, $item_quantity, $item_price, $userId, $item_name, $item_desc, $item_img);
+        $stmt1->execute();
+    }
+
+    load('../views/index.php');
     
-    // 3. Issue new order and store order info in database
+    
 
-    // 4. Store each single item in order_items table
+    
 
-    // 5. Empty cart
+    // 5. Empty cart --> delay until payment is done
+     unset($_SESSION['cart']);
+     $query = "DELETE FROM cart WHERE item_id='$itemId'";
+     mysqli_query($link, $query);
 
     // 6. Send message to user whether action successful or not
 } 
