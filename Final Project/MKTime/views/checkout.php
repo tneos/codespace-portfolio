@@ -54,6 +54,7 @@ function calculateItemTotal($price, $quantity)
                           <p class="montserrat-300 mb-0 me-5 pe-3"><?php echo number_format((float)$value['item_quantity'] * $value['item_price'], 2, '.', ''); ?></p>
                           <div class="form-group">
                             <input
+                              readonly
                               id="form1"
                               min="0"
                               name="quantity"

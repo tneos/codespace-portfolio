@@ -16,6 +16,7 @@ function retrieveItems($link)
   $sql_item = "SELECT * FROM cart WHERE user_id='$userId'";
   $result_item = mysqli_query($link, $sql_item);
   $row_item = mysqli_fetch_array($result_item, MYSQLI_ASSOC);
+  //echo $userId . '<br>';
 
   // There are items in cart table
   echo $row_item['item_id_number'];
