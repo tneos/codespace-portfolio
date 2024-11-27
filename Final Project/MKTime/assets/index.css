@@ -197,14 +197,20 @@ hr {
 .home-title {
   font-size: 3rem;
 
-  @media only screen and (max-width: 992px) {
+  @media only screen and (max-width: 576px) {
     font-size: 2.5rem;
   }
 }
 .home-details {
-  font-size: 1.2rem;
-  @media only screen and (max-width: 992px) {
+  font-size: 1.3rem;
+  @media only screen and (max-width: 576px) {
     font-size: 1.1rem;
+  }
+}
+
+.home-details:nth-last-of-type(1) {
+  @media only screen and (max-width: 576px) {
+    margin-bottom: 3rem !important;
   }
 }
 

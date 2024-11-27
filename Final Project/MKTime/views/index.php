@@ -18,7 +18,7 @@ include('navbar.php');
     </section>
 
     <!--Brands-->
-    <section id="brands" class="container container-lg">
+    <section id="brands" class="container-fluid">
         <div class="row">
             <img src="../assets/images/ulysse.png" alt="seiko logo" class="img-fluid col-lg-3 col-md-6 col-sm-12">
             <img src="../assets/images/rolex.svg" alt="rolex logo" class="img-fluid col-lg-3 col-md-6 col-sm-12">
@@ -37,7 +37,7 @@ include('navbar.php');
                     <img src="<?php echo $row['item_img'] ?>" alt="echo $row['item_name']" class="img-fluid">
                     <div class="new-prod-details">
                         <h3 class="montserrat-300 py-2 new-prod-title"><?php echo $row['item_name'] ?></h3>
-                        <a href="<?php echo "singleProduct.php?item_id=" . $row['item_id']; ?>" class="btn btn-dark montserrat-300">Shop Now</a>
+                        <a href="<?php echo "singleProduct.php?item_id=" . $row['item_id']; ?>" class="btn btn-dark montserrat-300 mb-2">Shop Now</a>
                     </div>
                 </div>
             <?php } ?>
