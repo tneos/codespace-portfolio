@@ -1,13 +1,13 @@
-<?php 
-  include('head.php');
-  include('../actions/session.php');
-  require('../connect_db.php');
+<?php
+include('head.php');
+include('../actions/session.php');
+require('../connect_db.php');
 
 // Check if user logged in
 if (isset($_SESSION['first_name'])) {
-   $welcome= "Welcome " . $_SESSION[ 'first_name' ] ;
+    $welcome = "Welcome " . $_SESSION['first_name'];
 
-   echo '
+    echo '
     <div class="row navbar-row fixed-top bg-white">
         <nav class="navbar navbar-expand-lg">
                     <div class="nav-container">
@@ -59,14 +59,14 @@ if (isset($_SESSION['first_name'])) {
                                     <a class="nav-link josefin-slab-thin" aria-current="page" href="products.php" data-test="our watches">Our Watches</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link josefin-slab-thin" aria-current="page" href="#" data-test="Smart Watches">Smart Watches</a>
+                                    <a class="nav-link josefin-slab-thin" aria-current="page" href="smartProducts.php" data-test="Smart Watches">Smart Watches</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link josefin-slab-thin" aria-current="page" href="#" data-test="Analog">Analog</a>
+                                    <a class="nav-link josefin-slab-thin" aria-current="page" href="analogProducts.php" data-test="Analog">Analog</a>
                                 </li>
                             </ul>
                             <div class="d-flex justify-content-around position-relative icons icons-logged">
-                                <p class="montserrat-300 welcome-message">'.$welcome .'</p>
+                                <p class="montserrat-300 welcome-message">' . $welcome . '</p>
                                 <img
                                     type="button"
                                     data-bs-toggle="collapse"
@@ -87,9 +87,7 @@ if (isset($_SESSION['first_name'])) {
                                 </div>
                             </div>
   ';
-}
-
- else {
+} else {
     echo '
     <div class="row navbar-row fixed-top bg-white">
         <nav class="navbar navbar-expand-lg">
@@ -142,10 +140,10 @@ if (isset($_SESSION['first_name'])) {
                                     <a class="nav-link josefin-slab-thin" aria-current="page" href="products.php" data-test="our watches">Our Watches</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link josefin-slab-thin" aria-current="page" href="#" data-test="Smart Watches">Smart Watches</a>
+                                    <a class="nav-link josefin-slab-thin" aria-current="page" href="smartProducts.php" data-test="Smart Watches">Smart Watches</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link josefin-slab-thin" aria-current="page" href="#" data-test="Analog">Analog</a>
+                                    <a class="nav-link josefin-slab-thin" aria-current="page" href="analogProducts.php" data-test="Analog">Analog</a>
                                 </li>
                             </ul>
     <div class="d-flex justify-content-around position-relative icons">
@@ -170,15 +168,11 @@ if (isset($_SESSION['first_name'])) {
                                 </div>
                             </div>
     ';
-  }
+}
 
-  echo '
+echo '
 
                     </div>
         </nav>
 </div> 
-  '
-
-
-
-?>
+  ';
