@@ -1,11 +1,36 @@
 <?php
 include('head.php');
+include('../actions/retrieve_cart_items.php');
 include('../actions/session.php');
 require('../connect_db.php');
+
+
+
+
 
 // Check if user logged in
 if (isset($_SESSION['first_name'])) {
     $welcome = "Welcome " . $_SESSION['first_name'];
+
+
+    if (isset($_POST['add_to_cart']) || isset($_SESSION['cart']) || isset($_POST['remove_item']) || isset($_POST['edit_quantity'])) {
+        $countNumber = count(retrieveCartItems($link));
+    } else {
+        $countNumber = 0;
+    }
+
+
+    //$countNumber = null;
+
+
+
+
+
+
+
+
+
+
 
     echo '
     <div class="row navbar-row fixed-top bg-white">
@@ -79,6 +104,9 @@ if (isset($_SESSION['first_name'])) {
                                     id="user-icon"
                                 >
                                 <a href="cart.php">
+                                ' .
+        $countNumber
+        . '
                                 <img src="../assets/images/basket.svg" alt="basket" class="basket-icon">
                                 </a>
                                 <div class="collapse position-absolute top-100 start-0 user" id="userText">
