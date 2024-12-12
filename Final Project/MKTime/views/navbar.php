@@ -12,15 +12,18 @@ require('../connect_db.php');
 if (isset($_SESSION['first_name'])) {
     $welcome = "Welcome " . $_SESSION['first_name'];
 
-
-    if (isset($_POST['add_to_cart']) || isset($_SESSION['cart']) || isset($_POST['remove_item']) || isset($_POST['edit_quantity'])) {
-        $countNumber = count(retrieveCartItems($link));
-    } else {
-        $countNumber = 0;
+    retrieveCartItems($link);
+    if (isset($_SESSION['cart'])) {
+        if (count($_SESSION['cart']) === 0) {
+            $countNumber = '';
+        } else {
+            $countNumber = count($_SESSION['cart']);
+        }
     }
 
 
-    //$countNumber = null;
+
+
 
 
 
