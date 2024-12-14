@@ -2,8 +2,32 @@
 
 function retrieveCartItems($link)
 {
-
+    // Retrieve cart items from database table when user logs in
     if (isset($_SESSION['first_name'])) {
+        $userId = $_SESSION['user_id'];
+        $sql_item = "SELECT * FROM cart WHERE user_id='$userId'";
+        $result_items = $link->query($sql_item);
+
+        while ($row_item = $result_items->fetch_assoc()) {
+
+
+            // There are items in cart table
+            if (isset($row_item['item_id_number'])) {
+                $itemId = $row_item['item_id_number'];
+                $item_array = array(
+                    'item_id_number' => $row_item['item_id_number'],
+                    'item_name' => $row_item['item_name'],
+                    'item_desc' => $row_item['item_desc'],
+                    'item_img' => $row_item['item_img'],
+                    'item_price' => $row_item['item_price'],
+                    'item_quantity' => $row_item['item_quantity'],
+                );
+                $_SESSION['cart'][$itemId] = $item_array;
+            } else {
+                unset($_SESSION['cart']);
+            }
+        }
+
 
 
         if (isset($_POST['add_to_cart'])) {
@@ -14,7 +38,6 @@ function retrieveCartItems($link)
             $row_item = mysqli_fetch_array($result_item, MYSQLI_ASSOC);
 
             // There are items in cart table
-
             if (isset($row_item['item_id_number'])) {
                 $itemId = $row_item['item_id_number'];
                 $item_array = array(
@@ -32,10 +55,6 @@ function retrieveCartItems($link)
 
             if (isset($_SESSION['cart'])) {
                 $items_array_ids = array_column($_SESSION['cart'], "item_id_number");
-
-                foreach ($items_array_ids as $value) {
-                    echo "$value <br>";
-                }
 
                 // If item not already been to cart
                 if (!in_array($_POST['item_id'], $items_array_ids)) {
@@ -116,8 +135,5 @@ function retrieveCartItems($link)
             mysqli_query($link, $query);
             $_SESSION['cart'][$item_id] = $item_array;
         }
-        // else {
-        //     echo '<script>window.location="index.php";</script>';
-        // }
     }
 }

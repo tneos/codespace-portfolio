@@ -1,5 +1,4 @@
 <?php
-include('head.php');
 include('../actions/retrieve_cart_items.php');
 include('../actions/session.php');
 require('../connect_db.php');
@@ -20,19 +19,6 @@ if (isset($_SESSION['first_name'])) {
             $countNumber = count($_SESSION['cart']);
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     echo '
@@ -119,6 +105,7 @@ if (isset($_SESSION['first_name'])) {
                             </div>
   ';
 } else {
+
     echo '
     <div class="row navbar-row fixed-top bg-white">
         <nav class="navbar navbar-expand-lg">
@@ -198,12 +185,11 @@ if (isset($_SESSION['first_name'])) {
                                     <a class="btn btn-sm josefin-slab-thin user-info" href="register.php" data-test="create-account-link">Create an account</a>
                                 </div>
                             </div>
+                             
+  
     ';
 }
 
-echo '
-
-                    </div>
+echo '</div>
         </nav>
-</div> 
-  ';
+</div>';

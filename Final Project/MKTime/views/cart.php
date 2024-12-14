@@ -6,9 +6,10 @@ include('navbar.php');
 
 require('../connect_db.php');
 
-
-
-
+// When user logs out redirect to home page
+if (!isset($_SESSION['first_name'])) {
+  echo "<script>location.href='index.php';</script>";
+}
 
 // For every item calculate total price
 function calculateItemTotal($price, $quantity)
