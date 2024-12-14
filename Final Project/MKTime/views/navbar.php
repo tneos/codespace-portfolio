@@ -91,12 +91,12 @@ if (isset($_SESSION['first_name'])) {
                                     src="../assets/images/person.svg"
                                     alt="person"
                                     id="user-icon"
+                                    class="user-icon"
                                 >
-                                <a href="cart.php">
-                                ' .
-        $countNumber
-        . '
-                                <img src="../assets/images/basket.svg" alt="basket" class="basket-icon">
+                                
+                                <a href="cart.php" class="basket-container">
+                                  <p class="montserrat-300 mb-0">' . $countNumber . '</p>
+                                  <img src="../assets/images/basket.svg" alt="basket" class="basket-icon">
                                 </a>
                                 <div class="collapse position-absolute top-100 start-0 user" id="userText">
                                     <a class="btn btn-sm josefin-slab-thin user-info" type="submit" data-test="logout-link" href = "logout.php?redirect=<?php echo base64_encode(curPageURL()); ?>">Logout</a>
