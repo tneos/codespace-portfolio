@@ -1,10 +1,22 @@
 <?php
-include('../actions/retrieve_cart_items.php');
+include('head.php');
+
 include('../actions/session.php');
 require('../connect_db.php');
 
+// Error message element
+echo '
+    <div id="item-added-toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+          <h3 class="item-added-message montserrat-300 text-center">
+            Item already added!
+          </h3>
+          <button type="button" id="close-item-added" class="btn-close me-2 m-auto"></button>
+        </div>
+    </div>
+';
 
-
+include('../actions/retrieve_cart_items.php');
 
 
 // Check if user logged in
@@ -190,6 +202,6 @@ if (isset($_SESSION['first_name'])) {
     ';
 }
 
-echo '</div>
+echo '    </div>
         </nav>
-</div>';
+      </div>';

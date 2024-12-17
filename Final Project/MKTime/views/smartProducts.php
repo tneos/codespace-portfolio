@@ -14,7 +14,7 @@
     echo '
  <body>
   <div id="products">
-     <h1 class="montserrat-300 text-center">Our Products</h1>
+     <h1 class="montserrat-300 text-center">Smart Watches</h1>
                 <hr/>
     <div class="row m-2">
                 

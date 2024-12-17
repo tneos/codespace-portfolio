@@ -1,5 +1,6 @@
 <?php
 
+
 function retrieveCartItems($link)
 {
     // Retrieve cart items from database table when user logs in
@@ -82,7 +83,20 @@ function retrieveCartItems($link)
 
                     $stmt->execute();
                 } else {
-                    echo '<script>alert("Product already added!")</script>';
+                    // Display error message script
+                    echo '
+                    <script type="module">
+                         const toastItemAdded = document.getElementById("item-added-toast");
+                         const btnClose = document.getElementById("close-item-added");
+                         toastItemAdded.classList.add("added");   
+                         btnClose.addEventListener("click", (e) => {
+                              toastItemAdded.classList.remove("added");
+
+                        }); 
+                        setTimeout(() => {
+                          toastItemAdded.classList.remove("added");
+                        }, 3000);                 
+                    </script>';
                 }
             } else {
 

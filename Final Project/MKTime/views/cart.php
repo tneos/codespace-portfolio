@@ -1,5 +1,5 @@
 <?php
-include('head.php');
+// include('head.php');
 include('navbar.php');
 
 
@@ -41,6 +41,7 @@ $futureDate = $date->format('d/m/Y');
 <body>
   <section id="cart" class="h-50">
     <div class="container cart-container py-5">
+
       <h1 class="montserrat-300">Your Cart</h1>
       <hr />
       <div class="row d-flex justify-content-center my-4">
@@ -230,13 +231,17 @@ $futureDate = $date->format('d/m/Y');
     </div>
   </section>
 
-  <footer>
+  <?php
+  include('footer.php');
+  ?>
+
+  <!-- <footer>
     <h3 class="montserrat-300 py-3 text-white text-center footer-title">Useful Info</h3>
     <hr />
     <div class="container d-flex">
       <ul class="footer-list col-lg-6 col-md-12">
         <a href="#" class="footer-link">
-          <li class="text-white text-center pt-3">Delivery</li>
+          <li class="text-white text-  center pt-3">Delivery</li>
         </a>
         <a href="#" class="footer-link">
           <li class="text-white text-center pt-3">Returns</li>
@@ -267,4 +272,4 @@ $futureDate = $date->format('d/m/Y');
   integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
   crossorigin="anonymous"></script>
 
-</html>
+</html> -->
