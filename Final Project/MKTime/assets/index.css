@@ -337,7 +337,7 @@ hr {
 /* Back home button */
 .back-home {
   position: absolute;
-  top: -10%;
+  top: -8%;
   left: 0;
   width: 10rem;
 }
@@ -430,6 +430,32 @@ hr {
 }
 .btn-close {
   cursor: pointer;
+}
+
+/* Validation error */
+#validation-error {
+  display: block;
+  position: fixed;
+  left: 34%;
+  top: 4%;
+  width: 33vw;
+  height: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.175);
+  border-radius: 0.375rem;
+  padding: 0.2rem 0.4rem;
+  z-index: 1050;
+
+  @media only screen and (max-width: 768px) {
+    width: 38vh;
+  }
+  @media only screen and (max-width: 576px) {
+    width: 16rem;
+    left: 25%;
+    top: 6%;
+  }
+}
+.validation-error-remove {
+  display: none !important;
 }
 
 /* Checkout */
