@@ -12,10 +12,7 @@ if (isset($_POST['place_order'])) {
     $cvv = $_POST['cvv'];
     // Get user's id from session
     $userId = $_SESSION['user_id'];
-
-
-
-
+    $orderDate = date("Y-m-d H:i:s");
 
 
     $stmt = $link->prepare("INSERT INTO orders (order_total, order_name, user_id, card_expiration, cvv, card_number, order_date)
@@ -24,8 +21,10 @@ if (isset($_POST['place_order'])) {
 
     $stmt->execute();
     // 2. Issue new order and store order info in database
+
     // Retrieve order_id from database
     $orderId = $stmt->insert_id;
+
 
     // Retrieve cart items from database table
     $sql_item = "SELECT * FROM cart WHERE user_id='$userId'";
@@ -56,6 +55,7 @@ if (isset($_POST['place_order'])) {
         $item_img = $product['item_img'];
         $item_price = $product['item_price'];
         $item_quantity = $product['item_quantity'];
+        echo $item_name;
 
         // 4. Store each single item in order_items table
         $stmt1 = $link->prepare("INSERT INTO order_contents(order_id, item_id, item_quantity, item_price, user_id, item_name, item_desc, item_img)
@@ -64,19 +64,11 @@ if (isset($_POST['place_order'])) {
         $stmt1->execute();
     }
 
-
-
-
-
-
-
     // 5. Empty cart 
-    unset($_SESSION['cart'][$userId]);
+    unset($_SESSION['cart'][$item_id]);
     $query = "DELETE FROM cart WHERE user_id='$userId'";
     mysqli_query($link, $query);
 
     // 6. Send message to user whether action successful or not
-
-
     load('../views/index.php');
 }

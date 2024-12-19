@@ -360,6 +360,9 @@ hr {
 .cart-container {
   text-align: center;
 }
+.cart-number-hidden {
+  visibility: hidden;
+}
 
 .quantity-form {
   width: 100%;

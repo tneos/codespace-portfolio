@@ -19,14 +19,15 @@ echo '
 include('../actions/retrieve_cart_items.php');
 
 
+
 // Check if user logged in
 if (isset($_SESSION['first_name'])) {
     $welcome = "Welcome " . $_SESSION['first_name'];
-
+    $countNumber = 0;
     retrieveCartItems($link);
     if (isset($_SESSION['cart'])) {
         if (count($_SESSION['cart']) === 0) {
-            $countNumber = '';
+            $countNumber = 0;
         } else {
             $countNumber = count($_SESSION['cart']);
         }
@@ -106,9 +107,14 @@ if (isset($_SESSION['first_name'])) {
                                     class="user-icon"
                                 >
                                 
-                                <a href="cart.php" class="basket-container">
-                                  <p class="montserrat-300 mb-0">' . $countNumber . '</p>
-                                  <img src="../assets/images/basket.svg" alt="basket" class="basket-icon">
+                                <a href="cart.php" class="basket-container">';
+    if ($countNumber === 0) {
+        echo '<p class="montserrat-300 mb-0 cart-number-hidden">' . $countNumber . '</p>';
+    } else {
+        echo '<p class="montserrat-300 mb-0">' . $countNumber . '</p>';
+    }
+
+    echo '<img src="../assets/images/basket.svg" alt="basket" class="basket-icon">
                                 </a>
                                 <div class="collapse position-absolute top-100 start-0 user" id="userText">
                                     <a class="btn btn-sm josefin-slab-thin user-info" type="submit" data-test="logout-link" href = "logout.php?redirect=<?php echo base64_encode(curPageURL()); ?>">Logout</a>
