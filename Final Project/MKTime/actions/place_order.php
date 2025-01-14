@@ -1,4 +1,5 @@
 <?php
+include_once '../views/head.php';
 include('../actions/session.php');
 require('../connect_db.php');
 require('login_tools.php');
@@ -55,20 +56,62 @@ if (isset($_POST['place_order'])) {
         $item_img = $product['item_img'];
         $item_price = $product['item_price'];
         $item_quantity = $product['item_quantity'];
-        echo $item_name;
+
 
         // 4. Store each single item in order_items table
         $stmt1 = $link->prepare("INSERT INTO order_contents(order_id, item_id, item_quantity, item_price, user_id, item_name, item_desc, item_img)
-                        VALUES (?,?,?,?,?,?,?,?)");
+                  VALUES (?,?,?,?,?,?,?,?)");
         $stmt1->bind_param('iiisisss', $orderId, $item_id, $item_quantity, $item_price, $userId, $item_name, $item_desc, $item_img);
         $stmt1->execute();
     }
 
     // 5. Empty cart 
+
+
+
     unset($_SESSION['cart'][$item_id]);
     $query = "DELETE FROM cart WHERE user_id='$userId'";
     mysqli_query($link, $query);
 
     // 6. Send message to user whether action successful or not
-    load('../views/index.php');
+    $q = "SELECT * FROM order_contents WHERE user_id='$userId' AND order_id='$orderId'";
+    $r = mysqli_query($link, $q);
+
+    // Display message to user
+    if ($r) {
+        echo
+        '
+         <section class="vh-75 pt-2">
+             <div class="container h-75">
+                 <div class="row d-flex justify-content-center align-items-center confirmation-container">
+                    
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                <p class="text-center montserrat-300 h4 mb-5 mx-1 mx-md-4 mt-4">Your payment was successful</p>
+                <a class="link-underline-dark" href="../views/index.php">Back Home</a>
+                
+              </div>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    ';
+    } else {
+        echo
+        '
+    <div id="user-msg" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+          <h3 class="item-added-message montserrat-300 text-center">There was a problem with your payment. Please try again.</h3>
+          <button type="button" id="close-msg" class="btn-close me-2 m-auto"></button>
+        </div>
+    </div>
+    ';
+    }
 }

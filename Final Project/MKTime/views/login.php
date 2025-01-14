@@ -10,12 +10,12 @@ if (isset($errors) && !empty($errors)) {
   foreach ($errors as $msg) {
     echo // Error message element
     '
-    <div id="validation-error" role="alert" aria-live="assertive" aria-atomic="true">
+    <div id="user-msg" role="alert" aria-live="assertive" aria-atomic="true">
         <div class="d-flex">
           <h3 class="item-added-message montserrat-300 text-center">'
       . $msg .
       '</h3>
-          <button type="button" id="close-error" class="btn-close me-2 m-auto"></button>
+          <button type="button" id="close-msg" class="btn-close me-2 m-auto"></button>
         </div>
     </div>
 ';
@@ -23,15 +23,15 @@ if (isset($errors) && !empty($errors)) {
     // Handle error message
     echo '
             <script type="module">
-              const validationError = document.getElementById("validation-error");
-              const btnClose = document.getElementById("close-error");
+              const userMsg = document.getElementById("user-msg");
+              const btnClose = document.getElementById("close-msg");
 
               btnClose.addEventListener("click", (e) => {
-                  validationError.classList.add("validation-error-remove");
+                  userMsg.classList.add("user-msg-remove");
 
               }); 
               setTimeout(() => {
-                 validationError.classList.add("validation-error-remove");
+                 userMsg.classList.add("user-msg-remove");
               }, 2000);                 
             </script>';
   }

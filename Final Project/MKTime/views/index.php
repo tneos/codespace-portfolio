@@ -1,6 +1,8 @@
 <?php
 include('head.php');
 include('navbar.php');
+
+include('../actions/place_order.php');
 ?>
 
 <body>

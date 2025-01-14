@@ -315,7 +315,8 @@ hr {
 
 .register-container,
 .login-container,
-.cart-container {
+.cart-container,
+.confirmation-container {
   position: relative;
   margin-top: 5rem;
 }
@@ -435,8 +436,8 @@ hr {
   cursor: pointer;
 }
 
-/* Validation error */
-#validation-error {
+/* User message */
+#user-msg {
   display: block;
   position: fixed;
   left: 34%;
@@ -457,7 +458,7 @@ hr {
     top: 6%;
   }
 }
-.validation-error-remove {
+.user-msg-remove {
   display: none !important;
 }
 
