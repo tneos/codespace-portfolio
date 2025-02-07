@@ -34,6 +34,6 @@
         </td>
                                       <td>
 <a href="#"><img src="https://github.com/devicons/devicon/blob/master/icons/cypressio/cypressio-original-wordmark.svg" alt="" width="30"height="30"/></a>
-       
+       </td>
     </tr>
 </table>
