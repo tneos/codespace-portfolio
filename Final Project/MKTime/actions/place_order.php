@@ -69,7 +69,7 @@ if (isset($_POST['place_order'])) {
 
 
 
-  unset($_SESSION['cart'][$item_id]);
+  unset($_SESSION['cart']);
   $query = "DELETE FROM cart WHERE user_id='$userId'";
   mysqli_query($link, $query);
 
