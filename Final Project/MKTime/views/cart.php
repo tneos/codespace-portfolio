@@ -1,13 +1,29 @@
 <?php
-// include('head.php');
 include('navbar.php');
 
 
 
 require('../connect_db.php');
 
+
+
+
+
+// Check if user logged in when trying to add to basket
+if (!isset($_SESSION['first_name']) && isset($_POST['add_to_cart'])) {
+  echo '
+    <div id="cart-msg" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+          <h3 class="item-added-message montserrat-300 text-center">Login to your account in order to add products</h3>
+          <button type="button" id="close-msg" class="btn-close me-2 m-auto"></button>
+        </div>
+    </div>';
+  echo "<script>location.href='singleProduct.php?item_id=" . $_SESSION['product_id'] . "';</script>";
+}
+
 // When user logs out redirect to home page
 if (!isset($_SESSION['first_name'])) {
+
   echo "<script>location.href='index.php';</script>";
 }
 

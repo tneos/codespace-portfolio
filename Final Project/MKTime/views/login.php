@@ -57,7 +57,7 @@ if (isset($errors) && !empty($errors)) {
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                      <label class="form-label" for="inputemail">Email</label>
+                      <label class="form-label" for="email">Email</label>
                       <input
                         data-test="email-input"
                         type="text"
@@ -71,7 +71,7 @@ if (isset($errors) && !empty($errors)) {
                   <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                     <div data-mdb-input-init class="form-outline flex-fill mb-0">
-                      <label class="form-label" for="inputpass">Password</label>
+                      <label class="form-label" for="pass">Password</label>
                       <input
                         data-test="password-input"
                         type="password"

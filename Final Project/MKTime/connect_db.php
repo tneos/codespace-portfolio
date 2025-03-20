@@ -1,17 +1,13 @@
-<?php 
+<?php
 
 # Connect to database
 
-$link = mysqli_connect('localhost','root','','mktime'); 
+$link = mysqli_connect('localhost', 'root', '', 'mktime');
 
-if (!$link) { 
 
-# Otherwise fail gracefully and explain the error. 
+if (!$link) {
 
-die('Could not connect to MySQL: ' . mysqli_error(err)); 
+    # Otherwise fail gracefully and explain the error. 
 
-} 
-
- 
-
-?>
+    die('Could not connect to MySQL: ' . mysqli_error(err));
+}

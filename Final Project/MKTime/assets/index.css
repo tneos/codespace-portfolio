@@ -11,10 +11,6 @@
   font-weight: 200;
   font-size: 1.3rem;
   font-style: normal;
-
-  @media only screen and (max-width: 992px) {
-    font-size: 1.1rem;
-  }
 }
 
 .montserrat-300 {
@@ -32,16 +28,6 @@
   padding: 0;
   height: 7rem;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-
-  @media only screen and (max-width: 992px) {
-    height: 21rem;
-  }
-}
-
-@media only screen and (max-width: 992px) {
-  .nav-list-container {
-    margin-left: 2rem;
-  }
 }
 
 .nav-container {
@@ -57,11 +43,7 @@
   cursor: pointer;
   color: #010101;
 }
-.nav-link {
-  @media only screen and (max-width: 992px) {
-    font-size: 1rem;
-  }
-}
+
 .basket-container {
   display: flex;
   text-decoration: none;
@@ -80,62 +62,33 @@
   position: absolute;
   top: 0;
   left: 4rem;
-
-  @media only screen and (max-width: 992px) {
-    top: 10px;
-  }
 }
 
 .logo {
   width: 12rem;
   height: 6rem;
-
-  @media only screen and (max-width: 576px) {
-    width: 11rem;
-    height: 7rem;
-  }
 }
 
 .nav-list-container {
   margin-top: 2%;
   margin-left: 30%;
-
-  @media only screen and (max-width: 992px) {
-    height: 10rem;
-    margin-left: 65%;
-    width: 10rem;
-  }
 }
 .logged {
   position: relative;
   margin-left: 5%;
-
-  @media only screen and (max-width: 992px) {
-    margin-left: 50%;
-  }
 }
+
 .navbar-burger {
-  margin-top: 3rem;
-  margin-left: 85%;
+  margin-top: 1rem;
+  margin-left: 49%;
 }
 .icons {
   width: 25%;
   margin-left: auto;
-  @media (max-width: 992px) {
-    width: 20vw;
-    margin-top: 1rem;
-    margin-left: 0;
-    justify-content: space-between !important;
-  }
 }
 .icons-logged {
   position: absolute !important;
   right: 3%;
-
-  @media only screen and (max-width: 992px) {
-    width: 50vw;
-    left: 0;
-  }
 }
 .user {
   transform: translateY(10%);
@@ -143,11 +96,6 @@
   display: flex;
   flex-direction: column;
   background-color: white;
-
-  @media (max-width: 992px) {
-    width: 40vw;
-    transform: translate(-5%, 30%);
-  }
 }
 .user-info {
   font-size: 1rem;
@@ -184,55 +132,28 @@ hr {
   justify-content: center;
   align-items: flex-start;
   margin-top: 30vh;
-
-  @media only screen and (max-width: 992px) {
-    background-attachment: scroll;
-    margin-top: 50vh;
-  }
 }
 
 .home-container {
   margin-top: 25%;
-
-  @media only screen and (max-width: 992px) {
-    margin: 70% 1rem 0 1rem;
-  }
 }
 
 .home-title {
   font-size: 3rem;
-
-  @media only screen and (max-width: 576px) {
-    font-size: 2.5rem;
-  }
 }
 .home-details {
   font-size: 1.3rem;
-  @media only screen and (max-width: 576px) {
-    font-size: 1.1rem;
-  }
-}
-
-.home-details:nth-last-of-type(1) {
-  @media only screen and (max-width: 576px) {
-    margin-bottom: 3rem !important;
-  }
 }
 
 /* Products */
 #products {
   margin-top: 20%;
-
-  @media only screen and (max-width: 992px) {
-    margin-top: 90%;
-  }
 }
 
 /* Brands */
-#brands {
-  @media only screen and (min-width: 992px) {
-    margin: 10rem 0;
-  }
+
+section#brands .row > img {
+  margin-bottom: 5rem;
 }
 
 /* New Products */
@@ -307,10 +228,6 @@ hr {
 /* Individual product */
 .individual-product {
   margin-top: 15% !important;
-
-  @media only screen and (max-width: 992px) {
-    margin-top: 90% !important;
-  }
 }
 
 .register-container,
@@ -346,16 +263,6 @@ hr {
 /* Cart */
 #cart {
   margin-top: 10%;
-
-  @media only screen and (max-width: 992px) {
-    margin-top: 55%;
-  }
-  @media only screen and (max-width: 768px) {
-    margin-top: 70%;
-  }
-  @media only screen and (max-width: 576px) {
-    margin-top: 95%;
-  }
 }
 
 .cart-container {
@@ -407,23 +314,6 @@ hr {
   border-radius: 0.375rem;
   padding: 0.2rem 0.4rem;
   z-index: 1050;
-
-  @media only screen and (max-width: 992px) {
-    left: 65%;
-    top: 35%;
-    width: 35vh;
-  }
-
-  @media only screen and (max-width: 768px) {
-    left: 30%;
-    top: 55%;
-    width: 35vh;
-  }
-  @media only screen and (max-width: 576px) {
-    left: 25%;
-    top: 40%;
-    width: 35vh;
-  }
 }
 .item-added-message {
   font-size: 1rem;
@@ -448,17 +338,25 @@ hr {
   border-radius: 0.375rem;
   padding: 0.2rem 0.4rem;
   z-index: 1050;
-
-  @media only screen and (max-width: 768px) {
-    width: 38vh;
-  }
-  @media only screen and (max-width: 576px) {
-    width: 16rem;
-    left: 25%;
-    top: 6%;
-  }
 }
 .user-msg-remove {
+  display: none !important;
+}
+
+/* Cart error message */
+#cart-msg {
+  display: block;
+  position: fixed;
+  left: 34%;
+  top: 21%;
+  width: 36vw;
+  height: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.175);
+  border-radius: 0.375rem;
+  padding: 0.2rem 0.4rem;
+  z-index: 1050;
+}
+.cart-msg-remove {
   display: none !important;
 }
 
@@ -484,8 +382,146 @@ footer {
   text-decoration: none;
 }
 
+.footer-link li {
+  padding-left: 40%;
+}
+
 .copyright {
   position: absolute;
   bottom: 5%;
   left: 1rem;
+}
+
+/* Media queries */
+@media only screen and (max-width: 576px) {
+  .logo {
+    width: 11rem;
+    height: 7rem;
+  }
+  .home-title {
+    font-size: 2.5rem;
+  }
+  .home-details {
+    font-size: 1.1rem;
+  }
+  .home-details:nth-last-of-type(1) {
+    margin-bottom: 3rem !important;
+  }
+  #cart {
+    margin-top: 95%;
+  }
+  #item-added-toast {
+    left: 25%;
+    top: 40%;
+    width: 35vh;
+  }
+  #user-msg {
+    width: 16rem;
+    left: 25%;
+    top: 6%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #cart {
+    margin-top: 70%;
+  }
+  #item-added-toast {
+    left: 30%;
+    top: 55%;
+    width: 35vh;
+  }
+  #user-msg {
+    width: 38vh;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .josefin-slab-thin {
+    font-size: 1.1rem;
+  }
+  .navbar {
+    height: 40vh;
+  }
+
+  .nav-list-container {
+    margin-left: 2rem;
+    height: 10rem;
+    /* margin-left: 40%; */
+    width: 10rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+
+  .logo-link {
+    top: 10px;
+    left: 2rem;
+    width: 10rem;
+  }
+
+  .logged {
+    margin-left: 50%;
+  }
+
+  .icons {
+    width: 20vw;
+    margin-top: 1rem;
+    margin-left: 0;
+    justify-content: space-between !important;
+  }
+
+  .icons-logged {
+    width: 50vw;
+    left: 0;
+  }
+
+  .user {
+    width: 40vw;
+    transform: translate(-5%, 30%);
+  }
+
+  #home {
+    background-attachment: scroll;
+    margin-top: 50vh;
+  }
+
+  .home-container {
+    margin: 70% 1rem 0 1rem;
+  }
+
+  #products {
+    margin-top: 90%;
+  }
+  #brands {
+    margin: 10rem 0;
+  }
+
+  .individual-product {
+    margin-top: 90% !important;
+  }
+
+  #cart {
+    margin-top: 55%;
+  }
+
+  #cart-msg {
+    left: 26%;
+    width: 58vw;
+  }
+
+  #item-added-toast {
+    left: 65%;
+    top: 35%;
+    width: 35vh;
+  }
+
+  .footer-link li {
+    padding-left: 0;
+    font-size: 0.8rem;
+  }
+
+  .copyright {
+    left: 21%;
+  }
 }
