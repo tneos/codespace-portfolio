@@ -1,8 +1,5 @@
 <?php
 include('navbar.php');
-
-
-
 require('../connect_db.php');
 
 
@@ -18,6 +15,11 @@ if (!isset($_SESSION['first_name']) && isset($_POST['add_to_cart'])) {
           <button type="button" id="close-msg" class="btn-close me-2 m-auto"></button>
         </div>
     </div>';
+  // Delay 1 sec 
+  ob_end_flush();
+  flush();
+  sleep(1);
+
   echo "<script>location.href='singleProduct.php?item_id=" . $_SESSION['product_id'] . "';</script>";
 }
 

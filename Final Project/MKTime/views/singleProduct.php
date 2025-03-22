@@ -1,8 +1,5 @@
 <?php
-
 include 'navbar.php';
-
-
 
 
 if (isset($_GET['item_id'])) {
@@ -23,18 +20,6 @@ if (isset($_GET['item_id'])) {
 
   $_SESSION['product_id'] = $individual_item['id'];
 }
-
-if (!isset($_SESSION['first_name']) && isset($_POST['add_to_cart'])) {
-  echo '
-    <div id="cart-msg" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="d-flex">
-          <h3 class="item-added-message montserrat-300 text-center">Login to your account in order to add products</h3>
-          <button type="button" id="close-msg" class="btn-close me-2 m-auto"></button>
-        </div>
-    </div>';
-}
-
-
 
 ?>
 

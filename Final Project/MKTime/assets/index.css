@@ -407,6 +407,19 @@ footer {
   .home-details:nth-last-of-type(1) {
     margin-bottom: 3rem !important;
   }
+  .user-info {
+    font-size: 0.8rem;
+  }
+
+  .welcome-message {
+    font-size: 0.7rem;
+  }
+
+  .basket-icon,
+  .user-icon {
+    width: 1rem;
+  }
+
   #cart {
     margin-top: 95%;
   }
@@ -506,8 +519,17 @@ footer {
   }
 
   #cart-msg {
-    left: 26%;
-    width: 58vw;
+    left: 11%;
+    width: 81vw;
+    height: 3rem;
+  }
+  .item-added-message {
+    font-size: 0.9rem;
+  }
+
+  #close-msg {
+    height: 0.5rem;
+    width: 0.5rem;
   }
 
   #item-added-toast {
