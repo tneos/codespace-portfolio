@@ -1,5 +1,6 @@
 <?php
 include('head.php');
+include('../actions/login_tools.php');
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -59,12 +60,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	VALUES ('$fn', '$ln', '$e', '$p', NOW() )";
     $r = @mysqli_query($link, $q);
     if ($r) {
-      echo '
-      <div class="container" data-test="register-success-container">
-     <p data-test="register-success-msg">You are now registered.</p>
-	  <a class="btn btn-light card-button montserrat-300" href="login.php" data-test="register-success-btn">Login</a>
-    </div>
-    ';
+      // Validate user and redirect to home page
+      list($check, $data) = validate($link, $_POST['email'], $_POST['pass1']);
+      if ($check) {
+        session_start();
+        $_SESSION['user_id'] = $data['user_id'];
+        $_SESSION['first_name'] = $data['first_name'];
+        $_SESSION['last_name'] = $data['last_name'];
+
+        load('index.php');
+      }
     }
 
     # Close database connection.
